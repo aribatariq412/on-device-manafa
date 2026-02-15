@@ -2,10 +2,11 @@
 
 # Script: manafa.sh
 # Description: Provides an interface to manage the lifecycle of the inner services: battery stats, Perfetto, and log management.
-# Author: Rui Rua
-# Date: August 20, 2023
+#              Supports enhanced profiling modes: legacy, energy, memory, both.
+# Author: Rui Rua (original), enhanced for capstone project
+# Date: August 20, 2023 (original), February 2026 (enhanced)
 
-# Usage: sh ./manafa.sh [command] [run_id]
+# Usage: sh ./manafa.sh [command] [run_id] [profile_mode]
 # Commands:
 #   install       Install all managed services on the device
 #   export        Export results from all managed services
@@ -15,6 +16,12 @@
 #   clean         Clean up all managed services
 #   push          Push necessary files to the device
 #   clean_local   Clean up local result files
+#
+# Profile Modes (optional, default: legacy):
+#   legacy    CPU frequency tracing only (original behavior)
+#   energy    Power rails + battery counters (requires Android 10+)
+#   memory    System memory statistics
+#   both      Combined energy + memory profiling
 
 # Dependencies: adb, isOnDevice (from utils.sh), getCurrentTimestamp (from utils.sh), emanafa (external tool)
 
@@ -26,10 +33,12 @@ logService="sh ./log_service.sh"
 
 CMD=$1
 RUN_ID=$2
+PROFILE_MODE=$3
 RESULTS_DIR="../results"
 IS_ON_DEVICE=$(isOnDevice)
 test -z $1 && CMD=start
 test -z $2 && test "$1" == "stop" && RUN_ID=$(getCurrentTimestamp)
+test -z "$3" && PROFILE_MODE="legacy"
 
 # Function: export_results
 # Description: Export results from all managed services
@@ -51,7 +60,7 @@ function install(){
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
         push
     fi
-    $perfettoService install
+    $perfettoService install "" "$PROFILE_MODE"
     $batteryStatsService install
     $logService install
 }
@@ -65,9 +74,14 @@ function init(){
 }
 
 # Function: start
-# Description: Start all managed services
+# Description: Start all managed services with selected profile mode
 function start(){
-    $perfettoService start
+    echo "========================================"
+    echo " on-device-manafa Profiling"
+    echo "========================================"
+    echo " Profile Mode: $PROFILE_MODE"
+    echo "========================================"
+    $perfettoService start "" "$PROFILE_MODE"
     $batteryStatsService start
     $logService start
 }
@@ -75,7 +89,7 @@ function start(){
 # Function: stop
 # Description: Stop all managed services
 function stop(){
-    $perfettoService stop "$RUN_ID"
+    $perfettoService stop "$RUN_ID" "$PROFILE_MODE"
     $batteryStatsService stop "$RUN_ID"
     $logService stop "$RUN_ID"
 }
@@ -93,6 +107,8 @@ function clean(){
 function push(){
     adb shell mkdir -p /sdcard/manafa/results
     adb push ../src /sdcard/manafa
+    # Push all resource files (configs) to device
+    adb push ../resources /sdcard/manafa
 }
 
 # Function: clean_local

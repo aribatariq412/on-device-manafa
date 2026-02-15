@@ -1,0 +1,25 @@
+
+
+buffers: {
+    size_kb: 65536
+    fill_policy: DISCARD
+}
+
+# System memory stats only
+data_sources: {
+    config {
+        name: "linux.sys_stats"
+        sys_stats_config {
+            meminfo_period_ms: 250
+            meminfo_counters: MEMINFO_MEM_TOTAL
+            meminfo_counters: MEMINFO_MEM_FREE
+            meminfo_counters: MEMINFO_MEM_AVAILABLE
+            meminfo_counters: MEMINFO_BUFFERS
+            meminfo_counters: MEMINFO_CACHED
+            meminfo_counters: MEMINFO_ACTIVE
+            meminfo_counters: MEMINFO_INACTIVE
+        }
+    }
+}
+
+duration_ms: 30000

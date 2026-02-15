@@ -1,0 +1,40 @@
+buffers: {
+    size_kb: 63488
+    fill_policy: DISCARD
+}
+
+buffers: {
+    size_kb: 2048
+    fill_policy: DISCARD
+}
+
+data_sources: {
+    config {
+        name: "android.power"
+        android_power_config {
+            battery_poll_ms: 250
+            battery_counters: BATTERY_COUNTER_CAPACITY_PERCENT
+            battery_counters: BATTERY_COUNTER_CHARGE
+            battery_counters: BATTERY_COUNTER_CURRENT
+            collect_power_rails: true
+        }
+    }
+}
+
+data_sources: {
+    config {
+        name: "linux.sys_stats"
+        sys_stats_config {
+            meminfo_period_ms: 250
+            meminfo_counters: MEMINFO_MEM_TOTAL
+            meminfo_counters: MEMINFO_MEM_FREE
+            meminfo_counters: MEMINFO_MEM_AVAILABLE
+            meminfo_counters: MEMINFO_BUFFERS
+            meminfo_counters: MEMINFO_CACHED
+            meminfo_counters: MEMINFO_ACTIVE
+            meminfo_counters: MEMINFO_INACTIVE
+        }
+    }
+}
+
+duration_ms: 300000
