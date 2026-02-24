@@ -10,13 +10,16 @@
 # Returns:
 #   0 if the script is on a device, 1 if not
 function isOnDevice(){
-    check_command="getprop ro.build.version.sdk"
-    # Run the command using adb shell
-    result=$(adb shell "$check_command" 2> /dev/null)
-    if [[ -n "$result" ]]; then
-        echo 0
-    else
+    if [[ -n "$IS_ON_DEVICE" ]]; then
+        echo "$IS_ON_DEVICE"
+        return
+    fi
+    # On Android (inside adb shell), /system/build.prop exists
+    if [[ -f "/system/build.prop" ]]; then
         echo 1
+    else
+        # On macOS/Linux host, assume device is connected via adb
+        echo 0
     fi
 }
 

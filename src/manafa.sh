@@ -35,7 +35,7 @@ CMD=$1
 RUN_ID=$2
 PROFILE_MODE=$3
 RESULTS_DIR="../results"
-IS_ON_DEVICE=$(isOnDevice)
+export IS_ON_DEVICE=$(isOnDevice)
 test -z $1 && CMD=start
 test -z $2 && test "$1" == "stop" && RUN_ID=$(getCurrentTimestamp)
 test -z "$3" && PROFILE_MODE="legacy"
