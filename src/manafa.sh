@@ -37,6 +37,7 @@ PROFILE_MODE=$3
 RESULTS_DIR="../results"
 export IS_ON_DEVICE=$(isOnDevice)
 test -z $1 && CMD=start
+test "$CMD" == "export" && CMD=export_results
 test -z $2 && test "$1" == "stop" && RUN_ID=$(getCurrentTimestamp)
 test -z "$3" && PROFILE_MODE="legacy"
 
