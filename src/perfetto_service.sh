@@ -6,7 +6,7 @@
 # Author: Rui Rua (original), enhanced for capstone project
 # Date: August 20, 2023 (original), February 2026 (enhanced)
 
-# Usage: sh perfetto_service.sh [command] [run_id] [profile_mode]
+# Usage: sh perfetto_service.sh [command] [run_id] [profile_mode] [duration_ms]
 # Commands:
 #   install   Install the Perfetto management service on the device
 #   export    Export Perfetto trace results from the device to local directory
@@ -28,6 +28,7 @@ source ./utils.sh
 CMD=$1
 RUN_ID=$2
 PROFILE_MODE=$3
+DURATION_MS=$4
 PREFIX=""
 WK_DIR=""
 IS_ON_DEVICE=$(isOnDevice)
@@ -45,6 +46,7 @@ CONFIG_FILE_BOTH="$RESOURCES_DIR/perfetto_config_both.pbtxt"
 test -z $1 && CMD=start
 test -z $2 && test "$CMD" == "stop" && RUN_ID=$(getCurrentTimestamp)
 test -z "$3" && PROFILE_MODE="legacy"
+test -z "$4" && DURATION_MS=30000
 test $IS_ON_DEVICE == "0" && PREFIX="adb shell "
 
 # Function: get_config_file
@@ -64,6 +66,17 @@ function get_config_file(){
             echo "$CONFIG_FILE_LEGACY"
             ;;
     esac
+}
+
+# Function: check_power_rails
+# Description: Returns 1 if device supports power rails, 0 if not (e.g. emulator)
+function check_power_rails(){
+    local characteristics=$($PREFIX getprop ro.build.characteristics 2>/dev/null)
+    if echo "$characteristics" | grep -qi "emulator"; then
+        echo "0"
+    else
+        echo "1"
+    fi
 }
 
 function install(){
@@ -90,10 +103,22 @@ function init(){
 }
 
 function start(){
+    if [[ "$PROFILE_MODE" == "energy" || "$PROFILE_MODE" == "both" ]]; then
+        if [[ "$(check_power_rails)" == "0" ]]; then
+            echo "[WARNING] power rails not supported on this device (emulator detected)"
+            if [[ "$PROFILE_MODE" == "both" ]]; then
+                echo "[WARNING] falling back to memory mode"
+                PROFILE_MODE="memory"
+            else
+                echo "[WARNING] falling back to legacy mode"
+                PROFILE_MODE="legacy"
+            fi
+        fi
+    fi
     local config_file=$(get_config_file)
     echo "Starting Perfetto with profile mode: $PROFILE_MODE"
     echo "Config: $config_file"
-    sh ./perfetto_service_aux.sh "$config_file" "$DEFAULT_OUTPUT_FILE"
+    sh ./perfetto_service_aux.sh "$config_file" "$DEFAULT_OUTPUT_FILE" "$DURATION_MS"
 }
 
 function stop(){

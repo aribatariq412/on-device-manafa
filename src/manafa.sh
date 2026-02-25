@@ -6,7 +6,7 @@
 # Author: Rui Rua (original), enhanced for capstone project
 # Date: August 20, 2023 (original), February 2026 (enhanced)
 
-# Usage: sh ./manafa.sh [command] [run_id] [profile_mode]
+# Usage: sh ./manafa.sh [command] [run_id] [profile_mode] [duration_ms]
 # Commands:
 #   install       Install all managed services on the device
 #   export        Export results from all managed services
@@ -19,9 +19,12 @@
 #
 # Profile Modes (optional, default: legacy):
 #   legacy    CPU frequency tracing only (original behavior)
-#   energy    Power rails + battery counters (requires Android 10+)
+#   energy    Power rails + battery counters (requires Android 10+, real device)
 #   memory    System memory statistics
 #   both      Combined energy + memory profiling
+#
+# Duration (optional, default: 30000ms):
+#   duration_ms   Profiling duration in milliseconds (e.g. 60000 for 60 seconds)
 
 # Dependencies: adb, isOnDevice (from utils.sh), getCurrentTimestamp (from utils.sh), emanafa (external tool)
 
@@ -34,12 +37,14 @@ logService="sh ./log_service.sh"
 CMD=$1
 RUN_ID=$2
 PROFILE_MODE=$3
+DURATION_MS=$4
 RESULTS_DIR="../results"
 export IS_ON_DEVICE=$(isOnDevice)
 test -z $1 && CMD=start
 test "$CMD" == "export" && CMD=export_results
 test -z $2 && test "$1" == "stop" && RUN_ID=$(getCurrentTimestamp)
 test -z "$3" && PROFILE_MODE="legacy"
+test -z "$4" && DURATION_MS=30000
 
 # Function: export_results
 # Description: Export results from all managed services
@@ -81,8 +86,9 @@ function start(){
     echo " on-device-manafa Profiling"
     echo "========================================"
     echo " Profile Mode: $PROFILE_MODE"
+    echo " Duration: ${DURATION_MS}ms"
     echo "========================================"
-    $perfettoService start "" "$PROFILE_MODE"
+    $perfettoService start "" "$PROFILE_MODE" "$DURATION_MS"
     $batteryStatsService start
     $logService start
 }
