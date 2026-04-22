@@ -34,7 +34,8 @@ test -z $1 && CMD=start
 test -z $2 && test $CMD=="stop" && RUN_ID=$(getCurrentTimestamp)
 test $IS_ON_DEVICE == "0" && PREFIX="adb shell "
 
-# reads the current battery percentage from dumpsys battery, works both on-device and via adb
+# Function: get_battery_level
+# Description: pulls the current battery % from dumpsys battery, works whether running on-device or through adb
 function get_battery_level(){
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
         adb shell dumpsys battery | grep "  level:" | awk '{print $2}'

@@ -74,7 +74,8 @@ function get_config_file(){
     esac
 }
 
-# helper that runs perfetto --query on the device and returns the raw text output
+# Function: query_perfetto_raw
+# Description: runs perfetto --query and returns the output; handles both on-device and adb cases
 function query_perfetto_raw(){
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
         adb shell "perfetto --query 2>/dev/null"
@@ -83,7 +84,8 @@ function query_perfetto_raw(){
     fi
 }
 
-# queries the perfetto daemon and prints all registered data sources - useful for seeing what's available before picking a mode
+# Function: query
+# Description: asks perfetto what data sources are registered on this device and prints them - good to run before choosing a profile mode
 function query(){
     echo "querying perfetto for available data sources..."
     local raw
@@ -97,7 +99,7 @@ function query(){
 }
 
 # Function: check_power_rails
-# Description: Returns 1 if android.power data source is registered with perfetto, 0 if not. Falls back to emulator detection if traced isn't running yet.
+# Description: checks if android.power is actually showing up in perfetto query, which is more reliable than guessing from device type; falls back to emulator check if traced hasn't started yet
 function check_power_rails(){
     local raw
     raw=$(query_perfetto_raw)
@@ -118,7 +120,8 @@ function check_power_rails(){
     fi
 }
 
-# checks if linux.perf is registered as a data source, which is needed for callstack sampling in method mode
+# Function: check_method_tracing
+# Description: checks if linux.perf showed up in the perfetto query since method mode won't work without it; assumes it's there if the query came back empty
 function check_method_tracing(){
     local raw
     raw=$(query_perfetto_raw)

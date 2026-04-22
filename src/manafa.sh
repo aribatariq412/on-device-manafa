@@ -81,7 +81,8 @@ function init(){
     $logService init
 }
 
-# passes through to perfetto_service query so you can see what data sources are on this device
+# Function: query
+# Description: forwards to perfetto_service to list what data sources are available on this device
 function query(){
     $perfettoService query
 }
