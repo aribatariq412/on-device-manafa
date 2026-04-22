@@ -3,8 +3,8 @@
 # Script: manafa.sh
 # Description: Provides an interface to manage the lifecycle of the inner services: battery stats, Perfetto, and log management.
 #              Supports enhanced profiling modes: legacy, energy, memory, both, method.
-# Author: Rui Rua (original), enhanced for capstone project
-# Date: August 20, 2023 (original), February 2026 (enhanced)
+# Author: Rui Rua
+# Date: August 20, 2023
 
 # Usage: sh ./manafa.sh [command] [run_id] [profile_mode] [duration_ms]
 # Commands:
@@ -81,8 +81,7 @@ function init(){
     $logService init
 }
 
-# Function: query
-# Description: Query Perfetto for available data sources on this device
+# passes through to perfetto_service query so you can see what data sources are on this device
 function query(){
     $perfettoService query
 }

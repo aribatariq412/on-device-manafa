@@ -3,8 +3,8 @@
 # Script: perfetto_service.sh
 # Description: Provides an interface to a service that manages Perfetto traces.
 #              Supports multiple profiling modes: legacy, energy, memory, both, method.
-# Author: Rui Rua (original), enhanced for capstone project
-# Date: August 20, 2023 (original), February 2026 (enhanced)
+# Author: Rui Rua
+# Date: August 20, 2023
 
 # Usage: sh perfetto_service.sh [command] [run_id] [profile_mode] [duration_ms]
 # Commands:
@@ -74,8 +74,7 @@ function get_config_file(){
     esac
 }
 
-# Function: query_perfetto_raw
-# Description: Runs perfetto --query and returns raw output
+# helper that runs perfetto --query on the device and returns the raw text output
 function query_perfetto_raw(){
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
         adb shell "perfetto --query 2>/dev/null"
@@ -84,8 +83,7 @@ function query_perfetto_raw(){
     fi
 }
 
-# Function: query
-# Description: Queries Perfetto daemon for all registered data sources on this device
+# queries the perfetto daemon and prints all registered data sources - useful for seeing what's available before picking a mode
 function query(){
     echo "querying perfetto for available data sources..."
     local raw
@@ -99,8 +97,7 @@ function query(){
 }
 
 # Function: check_power_rails
-# Description: Returns 1 if android.power data source is available, 0 if not.
-#              Uses perfetto --query for accuracy, falls back to emulator detection.
+# Description: Returns 1 if android.power data source is registered with perfetto, 0 if not. Falls back to emulator detection if traced isn't running yet.
 function check_power_rails(){
     local raw
     raw=$(query_perfetto_raw)
@@ -112,7 +109,7 @@ function check_power_rails(){
         fi
         return
     fi
-    # fallback: emulator detection
+    # fallback to checking build props if perfetto query gave nothing
     local characteristics=$($PREFIX getprop ro.build.characteristics 2>/dev/null)
     if echo "$characteristics" | grep -qi "emulator"; then
         echo "0"
@@ -121,8 +118,7 @@ function check_power_rails(){
     fi
 }
 
-# Function: check_method_tracing
-# Description: Returns 1 if linux.perf data source is available for callstack sampling, 0 if not.
+# checks if linux.perf is registered as a data source, which is needed for callstack sampling in method mode
 function check_method_tracing(){
     local raw
     raw=$(query_perfetto_raw)
@@ -140,6 +136,7 @@ function check_method_tracing(){
 function install(){
     $PREFIX mkdir -p $RESULTS_DIR
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
+        # Push all config files to device
         adb push "../resources/perfetto.config.bin" "$CONFIG_FILE_LEGACY"
         adb push "../resources/perfetto_config_power_rails.pbtxt" "$CONFIG_FILE_ENERGY" 2>/dev/null
         adb push "../resources/perfetto_config_memory_only.pbtxt" "$CONFIG_FILE_MEMORY" 2>/dev/null
@@ -188,6 +185,7 @@ function start(){
 function stop(){
     $PREFIX killall perfetto
     sleep 1
+    # Use .perfetto-trace extension for enhanced modes to preserve counter data
     if [[ "$PROFILE_MODE" != "legacy" ]]; then
         filename="trace-$RUN_ID-$(getBootTime).perfetto-trace"
     else

@@ -2,20 +2,24 @@
 
 # Script: batterystats_service.sh
 # Description: Provides an interface to a service that manages Android battery statistics (batterystats).
-#              Tracks battery drain % across a profiling run.
-# Author: Rui Rua (original), enhanced for capstone project
-# Date: August 20, 2023 (original), April 2026 (enhanced)
+# Author: Rui Rua
+# Date: August 20, 2023
 
 # Usage: sh batterystats_service.sh [command] [run_id]
 # Commands:
 #   install   Install the battery stats management service on the device
 #   export    Export battery stats results from the device to local directory
 #   init      Initialize the battery stats management service
-#   start     Start tracking battery statistics (records starting battery level)
-#   stop      Stop tracking battery statistics, save results and battery drain report
+#   start     Start tracking battery statistics
+#   stop      Stop tracking battery statistics and save results
 #   clean     Clean up battery stats files on the device and local directory
 
 # Dependencies: adb, isOnDevice (from utils.sh), getCurrentTimestamp (from utils.sh), getBootTime (from utils.sh)
+
+# Global Variables:
+#   PREFIX            - Command prefix based on whether the script is run on a device or not
+#   RESULTS_DIR       - Directory where battery stats files are stored on the device
+#   BATTERY_START_TMP - Temp file used to store the battery level recorded at start
 
 source ./utils.sh
 
@@ -30,8 +34,7 @@ test -z $1 && CMD=start
 test -z $2 && test $CMD=="stop" && RUN_ID=$(getCurrentTimestamp)
 test $IS_ON_DEVICE == "0" && PREFIX="adb shell "
 
-# Function: get_battery_level
-# Description: Reads the current battery level (0-100) from dumpsys battery
+# reads the current battery percentage from dumpsys battery, works both on-device and via adb
 function get_battery_level(){
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
         adb shell dumpsys battery | grep "  level:" | awk '{print $2}'
@@ -63,7 +66,7 @@ function init(){
 }
 
 # Function: start
-# Description: Resets battery statistics and records the starting battery level.
+# Description: Resets battery statistics and saves the starting battery level for drain tracking.
 function start(){
     $PREFIX dumpsys batterystats --reset
     local level
@@ -79,7 +82,7 @@ function start(){
 }
 
 # Function: stop
-# Description: Saves battery statistics and computes battery drain % since start.
+# Description: Saves battery statistics and computes battery drain percentage since start.
 function stop(){
     local boot_time
     boot_time=$(getBootTime)
