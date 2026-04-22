@@ -2,7 +2,7 @@
 
 # Script: manafa.sh
 # Description: Provides an interface to manage the lifecycle of the inner services: battery stats, Perfetto, and log management.
-#              Supports enhanced profiling modes: legacy, energy, memory, both.
+#              Supports enhanced profiling modes: legacy, energy, memory, both, method.
 # Author: Rui Rua (original), enhanced for capstone project
 # Date: August 20, 2023 (original), February 2026 (enhanced)
 
@@ -16,12 +16,14 @@
 #   clean         Clean up all managed services
 #   push          Push necessary files to the device
 #   clean_local   Clean up local result files
+#   query         Query Perfetto for available data sources on this device
 #
 # Profile Modes (optional, default: legacy):
 #   legacy    CPU frequency tracing only (original behavior)
 #   energy    Power rails + battery counters (requires Android 10+, real device)
 #   memory    System memory statistics
 #   both      Combined energy + memory profiling
+#   method    CPU callstack sampling + scheduling events (per-function profiling)
 #
 # Duration (optional, default: 30000ms):
 #   duration_ms   Profiling duration in milliseconds (e.g. 60000 for 60 seconds)
@@ -79,6 +81,12 @@ function init(){
     $logService init
 }
 
+# Function: query
+# Description: Query Perfetto for available data sources on this device
+function query(){
+    $perfettoService query
+}
+
 # Function: start
 # Description: Start all managed services with selected profile mode
 function start(){
@@ -114,7 +122,6 @@ function clean(){
 function push(){
     adb shell mkdir -p /sdcard/manafa/results
     adb push ../src /sdcard/manafa
-    # Push all resource files (configs) to device
     adb push ../resources /sdcard/manafa
 }
 

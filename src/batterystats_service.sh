@@ -2,23 +2,20 @@
 
 # Script: batterystats_service.sh
 # Description: Provides an interface to a service that manages Android battery statistics (batterystats).
-# Author: Rui Rua
-# Date: August 20, 2023
+#              Tracks battery drain % across a profiling run.
+# Author: Rui Rua (original), enhanced for capstone project
+# Date: August 20, 2023 (original), April 2026 (enhanced)
 
 # Usage: sh batterystats_service.sh [command] [run_id]
 # Commands:
 #   install   Install the battery stats management service on the device
 #   export    Export battery stats results from the device to local directory
 #   init      Initialize the battery stats management service
-#   start     Start tracking battery statistics
-#   stop      Stop tracking battery statistics and save results
+#   start     Start tracking battery statistics (records starting battery level)
+#   stop      Stop tracking battery statistics, save results and battery drain report
 #   clean     Clean up battery stats files on the device and local directory
 
 # Dependencies: adb, isOnDevice (from utils.sh), getCurrentTimestamp (from utils.sh), getBootTime (from utils.sh)
-
-# Global Variables:
-#   PREFIX       - Command prefix based on whether the script is run on a device or not
-#   RESULTS_DIR  - Directory where battery stats files are stored on the device
 
 source ./utils.sh
 
@@ -28,9 +25,20 @@ WK_DIR=""
 RUN_ID=$2
 IS_ON_DEVICE=$(isOnDevice)
 RESULTS_DIR="/sdcard/manafa/results/batterystats"
+BATTERY_START_TMP="$RESULTS_DIR/battery_start.tmp"
 test -z $1 && CMD=start
 test -z $2 && test $CMD=="stop" && RUN_ID=$(getCurrentTimestamp)
 test $IS_ON_DEVICE == "0" && PREFIX="adb shell "
+
+# Function: get_battery_level
+# Description: Reads the current battery level (0-100) from dumpsys battery
+function get_battery_level(){
+    if [[ "$IS_ON_DEVICE" == "0" ]]; then
+        adb shell dumpsys battery | grep "  level:" | awk '{print $2}'
+    else
+        dumpsys battery | grep "  level:" | awk '{print $2}'
+    fi
+}
 
 # Function: install
 # Description: Installs the battery stats management service on the device.
@@ -55,20 +63,52 @@ function init(){
 }
 
 # Function: start
-# Description: Resets battery statistics.
+# Description: Resets battery statistics and records the starting battery level.
 function start(){
     $PREFIX dumpsys batterystats --reset
+    local level
+    level=$(get_battery_level)
+    if [[ -n "$level" ]]; then
+        if [[ "$IS_ON_DEVICE" == "0" ]]; then
+            adb shell "echo $level > $BATTERY_START_TMP"
+        else
+            echo "$level" > "$BATTERY_START_TMP"
+        fi
+        echo "[battery] start level: ${level}%"
+    fi
 }
 
 # Function: stop
-# Description: Saves  battery statistics.
+# Description: Saves battery statistics and computes battery drain % since start.
 function stop(){
-    filename="bstats-$RUN_ID-$(getBootTime).log"
+    local boot_time
+    boot_time=$(getBootTime)
+    filename="bstats-$RUN_ID-${boot_time}.log"
     echo "Batterystats filename: $filename"
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
         $PREFIX "dumpsys batterystats --history > $RESULTS_DIR/$filename"
     else
         $PREFIX dumpsys batterystats --history > "$RESULTS_DIR/$filename"
+    fi
+
+    local end_level
+    local start_level
+    end_level=$(get_battery_level)
+    if [[ "$IS_ON_DEVICE" == "0" ]]; then
+        start_level=$(adb shell "cat $BATTERY_START_TMP 2>/dev/null" | tr -d '[:space:]')
+    else
+        start_level=$(cat "$BATTERY_START_TMP" 2>/dev/null | tr -d '[:space:]')
+    fi
+
+    if [[ -n "$start_level" && -n "$end_level" ]]; then
+        local drain=$(( start_level - end_level ))
+        local drain_file="bstats-drain-$RUN_ID-${boot_time}.log"
+        if [[ "$IS_ON_DEVICE" == "0" ]]; then
+            adb shell "printf 'battery_start=%s\nbattery_end=%s\nbattery_drain=%s%%\n' '$start_level' '$end_level' '$drain' > $RESULTS_DIR/$drain_file"
+        else
+            printf "battery_start=%s\nbattery_end=%s\nbattery_drain=%s%%\n" "$start_level" "$end_level" "$drain" > "$RESULTS_DIR/$drain_file"
+        fi
+        echo "[battery] drain: ${drain}% (${start_level}% -> ${end_level}%)"
     fi
 }
 

@@ -2,7 +2,7 @@
 
 # Script: perfetto_service.sh
 # Description: Provides an interface to a service that manages Perfetto traces.
-#              Supports multiple profiling modes: legacy, energy, memory, both.
+#              Supports multiple profiling modes: legacy, energy, memory, both, method.
 # Author: Rui Rua (original), enhanced for capstone project
 # Date: August 20, 2023 (original), February 2026 (enhanced)
 
@@ -14,12 +14,14 @@
 #   start     Start capturing a Perfetto trace
 #   stop      Stop capturing the Perfetto trace and save results
 #   clean     Clean up Perfetto trace files on the device and local directory
+#   query     Query Perfetto for all available data sources on this device
 #
 # Profile Modes (optional, default: legacy):
 #   legacy    CPU frequency tracing only (original behavior, binary config)
-#   energy    Power rails + battery counters (requires Android 10+, modern device)
+#   energy    Power rails + battery counters (requires Android 10+, real device)
 #   memory    System memory statistics (meminfo counters)
 #   both      Combined energy + memory profiling
+#   method    CPU callstack sampling + scheduling events (per-function profiling)
 
 # Dependencies: adb, isOnDevice (from utils.sh), getCurrentTimestamp (from utils.sh), getBootTime (from utils.sh)
 
@@ -42,6 +44,7 @@ CONFIG_FILE_LEGACY="$RESOURCES_DIR/perfetto.config.bin"
 CONFIG_FILE_ENERGY="$RESOURCES_DIR/perfetto_config_power_rails.pbtxt"
 CONFIG_FILE_MEMORY="$RESOURCES_DIR/perfetto_config_memory_only.pbtxt"
 CONFIG_FILE_BOTH="$RESOURCES_DIR/perfetto_config_both.pbtxt"
+CONFIG_FILE_METHOD="$RESOURCES_DIR/perfetto_config_method_tracing.pbtxt"
 
 test -z $1 && CMD=start
 test -z $2 && test "$CMD" == "stop" && RUN_ID=$(getCurrentTimestamp)
@@ -62,15 +65,54 @@ function get_config_file(){
         both)
             echo "$CONFIG_FILE_BOTH"
             ;;
+        method)
+            echo "$CONFIG_FILE_METHOD"
+            ;;
         legacy|*)
             echo "$CONFIG_FILE_LEGACY"
             ;;
     esac
 }
 
+# Function: query_perfetto_raw
+# Description: Runs perfetto --query and returns raw output
+function query_perfetto_raw(){
+    if [[ "$IS_ON_DEVICE" == "0" ]]; then
+        adb shell "perfetto --query 2>/dev/null"
+    else
+        perfetto --query 2>/dev/null
+    fi
+}
+
+# Function: query
+# Description: Queries Perfetto daemon for all registered data sources on this device
+function query(){
+    echo "querying perfetto for available data sources..."
+    local raw
+    raw=$(query_perfetto_raw)
+    if [[ -z "$raw" ]]; then
+        echo "[WARNING] no output from perfetto --query (is traced running? run 'init' first)"
+        return 1
+    fi
+    echo "available data sources:"
+    echo "$raw" | awk '/DATA SOURCES REGISTERED:/{found=1; next} /TRACING SESSIONS:/{found=0} found && /^[a-z]/{print "  " $1}' | sort -u
+}
+
 # Function: check_power_rails
-# Description: Returns 1 if device supports power rails, 0 if not (e.g. emulator)
+# Description: Returns 1 if android.power data source is available, 0 if not.
+#              Uses perfetto --query for accuracy, falls back to emulator detection.
 function check_power_rails(){
+    local raw
+    raw=$(query_perfetto_raw)
+    if [[ -n "$raw" ]]; then
+        if echo "$raw" | grep -q 'android\.power'; then
+            echo "1"
+        else
+            echo "0"
+        fi
+        return
+    fi
+    # fallback: emulator detection
     local characteristics=$($PREFIX getprop ro.build.characteristics 2>/dev/null)
     if echo "$characteristics" | grep -qi "emulator"; then
         echo "0"
@@ -79,14 +121,30 @@ function check_power_rails(){
     fi
 }
 
+# Function: check_method_tracing
+# Description: Returns 1 if linux.perf data source is available for callstack sampling, 0 if not.
+function check_method_tracing(){
+    local raw
+    raw=$(query_perfetto_raw)
+    if [[ -z "$raw" ]]; then
+        echo "1"
+        return
+    fi
+    if echo "$raw" | grep -q 'linux\.perf'; then
+        echo "1"
+    else
+        echo "0"
+    fi
+}
+
 function install(){
     $PREFIX mkdir -p $RESULTS_DIR
     if [[ "$IS_ON_DEVICE" == "0" ]]; then
-        # Push all config files to device
         adb push "../resources/perfetto.config.bin" "$CONFIG_FILE_LEGACY"
         adb push "../resources/perfetto_config_power_rails.pbtxt" "$CONFIG_FILE_ENERGY" 2>/dev/null
         adb push "../resources/perfetto_config_memory_only.pbtxt" "$CONFIG_FILE_MEMORY" 2>/dev/null
         adb push "../resources/perfetto_config_both.pbtxt" "$CONFIG_FILE_BOTH" 2>/dev/null
+        adb push "../resources/perfetto_config_method_tracing.pbtxt" "$CONFIG_FILE_METHOD" 2>/dev/null
     fi
 }
 
@@ -105,7 +163,7 @@ function init(){
 function start(){
     if [[ "$PROFILE_MODE" == "energy" || "$PROFILE_MODE" == "both" ]]; then
         if [[ "$(check_power_rails)" == "0" ]]; then
-            echo "[WARNING] power rails not supported on this device (emulator detected)"
+            echo "[WARNING] power rails not supported on this device"
             if [[ "$PROFILE_MODE" == "both" ]]; then
                 echo "[WARNING] falling back to memory mode"
                 PROFILE_MODE="memory"
@@ -113,6 +171,12 @@ function start(){
                 echo "[WARNING] falling back to legacy mode"
                 PROFILE_MODE="legacy"
             fi
+        fi
+    fi
+    if [[ "$PROFILE_MODE" == "method" ]]; then
+        if [[ "$(check_method_tracing)" == "0" ]]; then
+            echo "[WARNING] linux.perf not available on this device, falling back to legacy mode"
+            PROFILE_MODE="legacy"
         fi
     fi
     local config_file=$(get_config_file)
@@ -124,7 +188,6 @@ function start(){
 function stop(){
     $PREFIX killall perfetto
     sleep 1
-    # Use .perfetto-trace extension for enhanced modes to preserve counter data
     if [[ "$PROFILE_MODE" != "legacy" ]]; then
         filename="trace-$RUN_ID-$(getBootTime).perfetto-trace"
     else
