@@ -37,16 +37,24 @@ perfettoService="sh ./perfetto_service.sh"
 logService="sh ./log_service.sh"
 
 CMD=$1
-RUN_ID=$2
-PROFILE_MODE=$3
-DURATION_MS=$4
 RESULTS_DIR="../results"
 export IS_ON_DEVICE=$(isOnDevice)
-test -z $1 && CMD=start
+test -z "$1" && CMD=start
 test "$CMD" == "export" && CMD=export_results
-test -z $2 && test "$1" == "stop" && RUN_ID=$(getCurrentTimestamp)
-test -z "$3" && PROFILE_MODE="legacy"
-test -z "$4" && DURATION_MS=30000
+
+if [[ "$CMD" == "start" ]]; then
+    PROFILE_MODE=${2:-legacy}
+    DURATION_MS=${3:-30000}
+    RUN_ID=""
+elif [[ "$CMD" == "stop" ]]; then
+    RUN_ID=$(getCurrentTimestamp)
+    PROFILE_MODE=${2:-legacy}
+    DURATION_MS=30000
+else
+    RUN_ID=$2
+    PROFILE_MODE=${3:-legacy}
+    DURATION_MS=${4:-30000}
+fi
 
 # Function: export_results
 # Description: Export results from all managed services
