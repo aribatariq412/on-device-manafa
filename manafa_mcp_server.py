@@ -321,6 +321,54 @@ def get_mode_comparison() -> str:
 
 
 @mcp.tool()
+def get_waydroid_comparison() -> str:
+    """return profiling mode results from the waydroid android container experiment.
+    compares data quality (real/partial/dummy) across real device, android studio
+    emulator, and waydroid linux container for all 5 profiling modes.
+    traces were collected on ubuntu 26.04 arm64 via multipass on apple m1."""
+    waydroid_traces = {
+        "legacy": RESULTS_DIR / "perfetto" / "legacy_waydroid.perfetto-trace",
+        "energy": RESULTS_DIR / "perfetto" / "energy_waydroid.perfetto-trace",
+        "memory": RESULTS_DIR / "perfetto" / "memory_waydroid.perfetto-trace",
+        "both":   RESULTS_DIR / "perfetto" / "both_waydroid.perfetto-trace",
+        "method": RESULTS_DIR / "perfetto" / "method_waydroid.perfetto-trace",
+    }
+    results = {}
+    for mode, path in waydroid_traces.items():
+        if not path.exists():
+            results[mode] = {"error": "trace not found"}
+            continue
+        tp = TraceProcessor(trace=str(path))
+        #check what data actually made it into each trace
+        rail_tracks  = list(tp.query("SELECT COUNT(*) as n FROM counter_track WHERE name LIKE 'power.rails.%'"))[0].n
+        sched_slices = list(tp.query("SELECT COUNT(*) as n FROM __intrinsic_sched_slice"))[0].n
+        try:
+            perf_samples = list(tp.query("SELECT COUNT(*) as n FROM __intrinsic_perf_sample"))[0].n
+        except Exception:
+            perf_samples = 0
+        mem_counters = list(tp.query(
+            "SELECT COUNT(*) as n FROM __intrinsic_counter c "
+            "JOIN counter_track ct ON c.track_id=ct.id "
+            "WHERE ct.name IN ('MemTotal','MemFree','MemAvailable','Buffers','Cached')"
+        ))[0].n
+        tp.close()
+        results[mode] = {
+            "trace_size_mb":     round(path.stat().st_size / 1e6, 3),
+            "power_rail_tracks": rail_tracks,
+            "sched_slices":      sched_slices,
+            "perf_samples":      perf_samples,
+            "mem_counters":      mem_counters,
+        }
+    #include the three-environment quality matrix for easy comparison
+    quality_matrix = {
+        "real_device": {"legacy": 1.0, "energy": 1.0, "memory": 1.0, "both": 1.0, "method": 1.0},
+        "emulator":    {"legacy": 1.0, "energy": 0.0, "memory": 0.5, "both": 0.0, "method": 1.0},
+        "waydroid":    {"legacy": 0.0, "energy": 0.5, "memory": 1.0, "both": 0.5, "method": 0.5},
+    }
+    return json.dumps({"waydroid_trace_analysis": results, "quality_matrix": quality_matrix}, indent=2)
+
+
+@mcp.tool()
 def query_trace(run_id: str, sql: str) -> str:
     """run a custom perfetto sql query against any trace by run_id.
     useful for asking arbitrary questions about the trace data that

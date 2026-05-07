@@ -64,6 +64,26 @@ EMULATOR_RESULTS = {
     "method": "real",
 }
 
+#waydroid container traces — collected on ubuntu 26.04 arm64 vm via multipass on apple m1
+#using the exact same pbtxt configs as the real device runs for a fair comparison
+WAYDROID_TRACES = {
+    "legacy": os.path.join(os.path.dirname(__file__), "results/perfetto/legacy_waydroid.perfetto-trace"),
+    "energy": os.path.join(os.path.dirname(__file__), "results/perfetto/energy_waydroid.perfetto-trace"),
+    "memory": os.path.join(os.path.dirname(__file__), "results/perfetto/memory_waydroid.perfetto-trace"),
+    "both":   os.path.join(os.path.dirname(__file__), "results/perfetto/both_waydroid.perfetto-trace"),
+    "method": os.path.join(os.path.dirname(__file__), "results/perfetto/method_waydroid.perfetto-trace"),
+}
+
+#waydroid data quality scores: 1=real, 0.5=partial, 0=dummy
+#derived from traceprocessor queries on the waydroid traces
+WAYDROID_SCORES = {
+    "legacy": 0.0,   #cpu_frequency ftrace event blocked in container
+    "energy": 0.5,   #sched_switch real (17k slices), power rails dummy (0 tracks)
+    "memory": 1.0,   #meminfo counters fully real (847 samples)
+    "both":   0.5,   #memory real, power rails dummy
+    "method": 0.5,   #sched + per-process memory real, linux.perf callstack blocked
+}
+
 #github models gives free access to gpt-4o-mini via a personal access token
 GITHUB_TOKEN_ENV       = "GITHUB_TOKEN"
 GITHUB_MODELS_ENDPOINT = "https://models.inference.ai.azure.com"
@@ -197,6 +217,46 @@ def extract_thread_energy(trace_path: str) -> dict:
     }
 
 
+def extract_waydroid_results() -> dict:
+    results = {}
+    for mode, path in WAYDROID_TRACES.items():
+        tp = TraceProcessor(trace=path)
+
+        #count power rail tracks — should be 0 since container has no real hw
+        rail_tracks = list(tp.query(
+            "SELECT COUNT(*) as n FROM counter_track WHERE name LIKE 'power.rails.%'"
+        ))[0].n
+
+        #count sched slices — works because waydroid shares the host linux kernel
+        sched_slices = list(tp.query('SELECT COUNT(*) as n FROM __intrinsic_sched_slice'))[0].n
+
+        #count perf samples — linux.perf is blocked inside the lxc container
+        try:
+            perf_samples = list(tp.query('SELECT COUNT(*) as n FROM __intrinsic_perf_sample'))[0].n
+        except Exception:
+            perf_samples = 0
+
+        #count meminfo counter rows — uses linux.sys_stats which works via shared kernel
+        mem_counters = list(tp.query(
+            "SELECT COUNT(*) as n FROM __intrinsic_counter c "
+            "JOIN counter_track ct ON c.track_id=ct.id "
+            "WHERE ct.name IN ('MemTotal','MemFree','MemAvailable','Buffers','Cached')"
+        ))[0].n
+
+        tp.close()
+        trace_size_mb = round(os.path.getsize(path) / 1e6, 3)
+
+        results[mode] = {
+            "trace_size_mb":  trace_size_mb,
+            "power_rail_tracks": rail_tracks,
+            "sched_slices":   sched_slices,
+            "perf_samples":   perf_samples,
+            "mem_counters":   mem_counters,
+            "score":          WAYDROID_SCORES[mode],
+        }
+    return results
+
+
 def extract_hotspot_functions(trace_path: str) -> dict:
     tp = TraceProcessor(trace=trace_path)
 
@@ -254,18 +314,19 @@ def plot_mode_comparison():
         "Callstack\n(perf)": [0, 0, 0, 0, 1],
     }
 
-    #emulator validation: 1=real data, 0.5=flat/partial, 0=dummy
-    emulator_scores = {"legacy": 1.0, "energy": 0.0, "memory": 0.5, "both": 0.0, "method": 1.0}
+    #data quality scores per environment: 1=real, 0.5=partial, 0=dummy
     real_scores     = {"legacy": 1.0, "energy": 1.0, "memory": 1.0, "both": 1.0, "method": 1.0}
+    emulator_scores = {"legacy": 1.0, "energy": 0.0, "memory": 0.5, "both": 0.0, "method": 1.0}
+    waydroid_scores = WAYDROID_SCORES
 
-    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(11, 12))
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(11, 13))
     fig.suptitle("Profiling Mode Comparison — on-device-manafa (Pixel 9 Pro XL)", fontsize=12, fontweight="bold")
 
-    #top panel: data richness (file size)
+    #top panel: data richness (file size) — real device only as baseline
     sizes = [file_sizes_mb[m] for m in modes]
     bars = ax1.bar(modes, sizes, color=mode_colors, alpha=0.85, edgecolor="white")
     ax1.set_ylabel("Trace File Size (MB)")
-    ax1.set_title("Data Richness — Trace Size per Mode (representative 30s run)")
+    ax1.set_title("Data Richness — Trace Size per Mode (representative 30s run, real device)")
     ax1.set_yscale("log")
     ax1.grid(axis="y", linestyle="--", alpha=0.4)
     for bar, val in zip(bars, sizes):
@@ -288,16 +349,22 @@ def plot_mode_comparison():
             ax2.text(j, i, "✓" if val == 1 else "✗", ha="center", va="center",
                      fontsize=14, color="white" if val == 1 else "gray")
 
-    #bottom panel: real device vs emulator grouped bar chart
+    #bottom panel: three-environment grouped bar chart
     x = np.arange(len(modes))
-    w = 0.35
-    ax3.bar(x - w/2, [real_scores[m] for m in modes],     w, label="Real device (Pixel 9 Pro XL)", color="#4e79a7", alpha=0.85)
-    ax3.bar(x + w/2, [emulator_scores[m] for m in modes], w, label="Emulator (Android Studio)",    color="#f28e2b", alpha=0.85)
+    w = 0.25
+    ax3.bar(x - w,   [real_scores[m]     for m in modes], w, label="Real device (Pixel 9 Pro XL)", color="#4e79a7", alpha=0.85)
+    ax3.bar(x,       [emulator_scores[m] for m in modes], w, label="Emulator (Android Studio)",    color="#f28e2b", alpha=0.85)
+    #use a small floor (0.04) so 0.0 bars are still visible; annotate "blocked" on them
+    waydroid_display = [max(waydroid_scores[m], 0.04) for m in modes]
+    ax3.bar(x + w, waydroid_display, w, label="Waydroid (Linux container)", color="#59a14f", alpha=0.85)
+    for i, m in enumerate(modes):
+        if waydroid_scores[m] == 0.0:
+            ax3.text(x[i] + w, 0.06, "blocked", ha="center", va="bottom", fontsize=6.5, color="#333333")
     ax3.set_xticks(x)
     ax3.set_xticklabels(modes)
     ax3.set_yticks([0, 0.5, 1.0])
-    ax3.set_yticklabels(["dummy (0)", "flat/partial (0.5)", "real data (1.0)"])
-    ax3.set_title("Emulator vs Real Device — Data Quality per Mode")
+    ax3.set_yticklabels(["dummy (0)", "partial (0.5)", "real data (1.0)"])
+    ax3.set_title("Data Quality per Mode — Real Device vs Emulator vs Waydroid Container")
     ax3.legend(loc="lower right")
     ax3.grid(axis="y", linestyle="--", alpha=0.4)
 
@@ -413,10 +480,10 @@ def plot_thread_energy(thread_energy_runs: list[dict]):
     means  = {k: sum(v) / len(v) for k, v in stable.items()}
     sorted_procs = sorted(means.items(), key=lambda x: x[1], reverse=True)[:12]
 
-    labels = [p[0].split(":")[-1][:30] for p in sorted_procs]  #trim long process names
+    labels = [p[0][:28] for p in sorted_procs]  #show full name, limit to 28 chars
     values = [p[1] for p in sorted_procs]
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(11, 7))
     bars = ax.barh(labels[::-1], values[::-1], color="#e15759", alpha=0.82)
     ax.set_xlabel("Estimated CPU Energy (Joules, mean of n=5 runs)")
     ax.set_title("Per-Process CPU Energy Allocation — YouTube Energy Mode\n"
@@ -424,8 +491,9 @@ def plot_thread_energy(thread_energy_runs: list[dict]):
     ax.grid(axis="x", linestyle="--", alpha=0.4)
     for bar, val in zip(bars, values[::-1]):
         ax.text(val + 0.0005, bar.get_y() + bar.get_height()/2,
-                f"{val:.4f}J", va="center", fontsize=7)
+                f"{val:.3f}J", va="center", fontsize=7)
     plt.tight_layout()
+    plt.subplots_adjust(left=0.22)  #extra left margin so long process names don't clip
 
     out = os.path.join(OUT_DIR, "thread_energy_joules.png")
     plt.savefig(out, dpi=150)
@@ -600,12 +668,20 @@ def main():
     #file size is a direct proxy for data richness — method mode is ~8x larger than energy
     energy_sizes_mb = [os.path.getsize(find_trace(r)) / 1e6 for r in ENERGY_RUN_IDS]
     method_sizes_mb = [os.path.getsize(find_trace(r)) / 1e6 for r in METHOD_RUN_IDS]
+
+    #run traceprocessor on all 4 waydroid traces to get actual counter/slice counts
+    print("\n  extracting waydroid container results...")
+    waydroid_results = extract_waydroid_results()
+    for mode, res in waydroid_results.items():
+        print(f"  waydroid {mode}: {res['trace_size_mb']}MB, sched={res['sched_slices']} slices, mem={res['mem_counters']} counters, perf={res['perf_samples']} samples")
+
     data_richness = {
         "energy_mode_mean_mb":  round(sum(energy_sizes_mb) / len(energy_sizes_mb), 2),
         "method_mode_mean_mb":  round(sum(method_sizes_mb) / len(method_sizes_mb), 2),
         "energy_sizes_mb":      [round(s, 2) for s in energy_sizes_mb],
         "method_sizes_mb":      [round(s, 2) for s in method_sizes_mb],
         "emulator_validation":  EMULATOR_RESULTS,
+        "waydroid_validation":  WAYDROID_SCORES,
     }
     print(f"  energy mode: mean {data_richness['energy_mode_mean_mb']}MB per trace")
     print(f"  method mode: mean {data_richness['method_mode_mean_mb']}MB per trace")
@@ -631,6 +707,7 @@ def main():
         "thread_energy_j":    thread_energy_runs,
         "hotspot_functions":  func_summary,
         "data_richness":      data_richness,
+        "waydroid_results":   waydroid_results,
         "llm_analysis":       analysis,
     }
     json_out = os.path.join(OUT_DIR, "hotspot_analysis.json")
