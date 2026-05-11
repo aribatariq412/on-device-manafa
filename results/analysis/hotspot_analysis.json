@@ -1,0 +1,4496 @@
+{
+  "run_counts": {
+    "youtube_energy": 15,
+    "chrome_energy": 15,
+    "youtube_legacy": 15,
+    "chrome_method": 10
+  },
+  "power_rails": {
+    "CPU Big": {
+      "mean_mw": 31.9,
+      "std_mw": 30.0,
+      "min_mw": 13.2,
+      "max_mw": 141.3,
+      "values": [
+        141.3,
+        25.4,
+        36.8,
+        13.2,
+        23.1,
+        30.7,
+        28.6,
+        30.9,
+        17.1,
+        18.8,
+        28.3,
+        19.3,
+        17.8,
+        30.6,
+        16.6
+      ]
+    },
+    "CPU Little": {
+      "mean_mw": 111.9,
+      "std_mw": 16.3,
+      "min_mw": 101.1,
+      "max_mw": 172.0,
+      "values": [
+        172.0,
+        106.8,
+        113.3,
+        101.1,
+        104.7,
+        110.3,
+        107.6,
+        108.6,
+        105.6,
+        105.1,
+        110.0,
+        109.0,
+        107.5,
+        111.0,
+        106.2
+      ]
+    },
+    "CPU Mid": {
+      "mean_mw": 66.1,
+      "std_mw": 20.6,
+      "min_mw": 56.9,
+      "max_mw": 142.1,
+      "values": [
+        142.1,
+        58.7,
+        70.7,
+        59.7,
+        64.9,
+        59.9,
+        59.9,
+        60.8,
+        60.0,
+        59.0,
+        60.7,
+        56.9,
+        57.7,
+        59.1,
+        61.8
+      ]
+    },
+    "Display": {
+      "mean_mw": 299.7,
+      "std_mw": 26.8,
+      "min_mw": 268.3,
+      "max_mw": 388.2,
+      "values": [
+        388.2,
+        322.0,
+        268.3,
+        274.3,
+        274.4,
+        300.1,
+        301.9,
+        299.3,
+        290.8,
+        293.4,
+        297.2,
+        294.7,
+        298.8,
+        296.0,
+        296.0
+      ]
+    },
+    "GPU": {
+      "mean_mw": 10.0,
+      "std_mw": 1.5,
+      "min_mw": 8.7,
+      "max_mw": 15.3,
+      "values": [
+        15.3,
+        8.7,
+        9.0,
+        10.5,
+        10.0,
+        9.7,
+        9.9,
+        9.7,
+        9.7,
+        9.3,
+        9.2,
+        9.3,
+        9.9,
+        9.7,
+        10.0
+      ]
+    },
+    "Modem": {
+      "mean_mw": 28.0,
+      "std_mw": 4.5,
+      "min_mw": 23.0,
+      "max_mw": 38.8,
+      "values": [
+        29.3,
+        29.2,
+        38.8,
+        29.7,
+        30.2,
+        30.3,
+        23.2,
+        24.4,
+        32.0,
+        24.7,
+        23.0,
+        24.2,
+        33.7,
+        23.1,
+        24.2
+      ]
+    },
+    "Memory": {
+      "mean_mw": 38.4,
+      "std_mw": 6.7,
+      "min_mw": 34.5,
+      "max_mw": 63.1,
+      "values": [
+        63.1,
+        35.7,
+        39.2,
+        34.5,
+        35.6,
+        37.4,
+        37.6,
+        36.6,
+        35.6,
+        36.6,
+        36.9,
+        36.4,
+        36.3,
+        37.7,
+        36.8
+      ]
+    }
+  },
+  "cpu_threads": {
+    "CrRendererMain": {
+      "mean_sec": 9.523,
+      "std_sec": 3.104,
+      "min_sec": 0.491,
+      "max_sec": 11.289,
+      "values": [
+        10.919,
+        11.227,
+        10.367,
+        11.289,
+        0.491,
+        9.389,
+        9.049,
+        10.149,
+        11.246,
+        11.105
+      ]
+    },
+    "NetworkService": {
+      "mean_sec": 2.348,
+      "std_sec": 0.558,
+      "min_sec": 1.305,
+      "max_sec": 3.267,
+      "values": [
+        3.267,
+        2.729,
+        3.099,
+        2.632,
+        1.305,
+        2.22,
+        1.916,
+        2.041,
+        2.146,
+        2.122
+      ]
+    },
+    "VizCompositorTh": {
+      "mean_sec": 2.91,
+      "std_sec": 0.746,
+      "min_sec": 0.761,
+      "max_sec": 3.432,
+      "values": [
+        3.229,
+        3.205,
+        3.254,
+        3.301,
+        0.761,
+        2.785,
+        2.777,
+        3.053,
+        3.432,
+        3.307
+      ]
+    },
+    "ThreadPoolForeg": {
+      "mean_sec": 1.825,
+      "std_sec": 0.708,
+      "min_sec": 0.873,
+      "max_sec": 3.172,
+      "values": [
+        1.926,
+        1.695,
+        3.127,
+        3.172,
+        0.873,
+        1.449,
+        1.474,
+        1.499,
+        1.551,
+        1.479
+      ]
+    },
+    ".android.chrome": {
+      "mean_sec": 3.014,
+      "std_sec": 0.261,
+      "min_sec": 2.364,
+      "max_sec": 3.368,
+      "values": [
+        3.0,
+        2.835,
+        3.178,
+        2.918,
+        2.364,
+        3.024,
+        3.146,
+        3.086,
+        3.224,
+        3.368
+      ]
+    },
+    "Compositor": {
+      "mean_sec": 2.552,
+      "std_sec": 0.877,
+      "min_sec": 0.0,
+      "max_sec": 3.143,
+      "values": [
+        2.919,
+        2.943,
+        2.791,
+        3.004,
+        0.0,
+        2.464,
+        2.457,
+        2.792,
+        3.143,
+        3.008
+      ]
+    },
+    "CompositorGpuTh": {
+      "mean_sec": 1.909,
+      "std_sec": 0.515,
+      "min_sec": 0.538,
+      "max_sec": 2.355,
+      "values": [
+        2.254,
+        2.324,
+        2.355,
+        2.349,
+        0.538,
+        1.826,
+        1.681,
+        1.839,
+        2.064,
+        1.855
+      ]
+    },
+    "CrGpuMain": {
+      "mean_sec": 0.359,
+      "std_sec": 0.719,
+      "min_sec": 0.0,
+      "max_sec": 1.861,
+      "values": [
+        0.0,
+        0.0,
+        1.861,
+        1.729,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "battery_drain": {
+    "youtube_energy_drain_pct": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "chrome_method_drain_pct": [
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "youtube_mean_drain": 0.07,
+    "chrome_mean_drain": 0.1
+  },
+  "youtube_energy_j": [
+    {
+      "trace_duration_s": 59.92,
+      "total_cpu_energy_j": 27.2879,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 141.3,
+        "power.rails.cpu.little": 172.0,
+        "power.rails.cpu.mid": 142.1
+      },
+      "per_process": [
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 5.861,
+          "cpu_fraction": 0.1079,
+          "estimated_cpu_energy_j": 2.9443
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.854,
+          "cpu_fraction": 0.1078,
+          "estimated_cpu_energy_j": 2.9408
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 5.375,
+          "cpu_fraction": 0.0989,
+          "estimated_cpu_energy_j": 2.7001
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 4.941,
+          "cpu_fraction": 0.091,
+          "estimated_cpu_energy_j": 2.4822
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 4.031,
+          "cpu_fraction": 0.0742,
+          "estimated_cpu_energy_j": 2.025
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 3.974,
+          "cpu_fraction": 0.0732,
+          "estimated_cpu_energy_j": 1.9962
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.833,
+          "cpu_fraction": 0.0706,
+          "estimated_cpu_energy_j": 1.9253
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 2.797,
+          "cpu_fraction": 0.0515,
+          "estimated_cpu_energy_j": 1.4053
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.278,
+          "cpu_fraction": 0.0419,
+          "estimated_cpu_energy_j": 1.1445
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 1.979,
+          "cpu_fraction": 0.0364,
+          "estimated_cpu_energy_j": 0.9943
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.956,
+          "cpu_fraction": 0.036,
+          "estimated_cpu_energy_j": 0.9824
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 1.832,
+          "cpu_fraction": 0.0337,
+          "estimated_cpu_energy_j": 0.9205
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.809,
+          "cpu_fraction": 0.0333,
+          "estimated_cpu_energy_j": 0.909
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.562,
+          "cpu_fraction": 0.0288,
+          "estimated_cpu_energy_j": 0.7846
+        },
+        {
+          "process": "CronetNet",
+          "cpu_sec": 1.165,
+          "cpu_fraction": 0.0215,
+          "estimated_cpu_energy_j": 0.5854
+        },
+        {
+          "process": "ComponentLayout",
+          "cpu_sec": 1.158,
+          "cpu_fraction": 0.0213,
+          "estimated_cpu_energy_j": 0.5818
+        },
+        {
+          "process": "HeapTaskDaemon",
+          "cpu_sec": 1.007,
+          "cpu_fraction": 0.0185,
+          "estimated_cpu_energy_j": 0.5058
+        },
+        {
+          "process": "app",
+          "cpu_sec": 1.006,
+          "cpu_fraction": 0.0185,
+          "estimated_cpu_energy_j": 0.5054
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 0.952,
+          "cpu_fraction": 0.0175,
+          "estimated_cpu_energy_j": 0.4782
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 0.95,
+          "cpu_fraction": 0.0175,
+          "estimated_cpu_energy_j": 0.477
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.93,
+      "total_cpu_energy_j": 11.4403,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 25.4,
+        "power.rails.cpu.little": 106.8,
+        "power.rails.cpu.mid": 58.7
+      },
+      "per_process": [
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 5.459,
+          "cpu_fraction": 0.1104,
+          "estimated_cpu_energy_j": 1.2631
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.214,
+          "cpu_fraction": 0.1054,
+          "estimated_cpu_energy_j": 1.2063
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.186,
+          "cpu_fraction": 0.1049,
+          "estimated_cpu_energy_j": 1.2
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.435,
+          "cpu_fraction": 0.0897,
+          "estimated_cpu_energy_j": 1.0261
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.692,
+          "cpu_fraction": 0.0747,
+          "estimated_cpu_energy_j": 0.8543
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.386,
+          "cpu_fraction": 0.0685,
+          "estimated_cpu_energy_j": 0.7835
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.08,
+          "cpu_fraction": 0.0623,
+          "estimated_cpu_energy_j": 0.7126
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 2.715,
+          "cpu_fraction": 0.0549,
+          "estimated_cpu_energy_j": 0.6282
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.136,
+          "cpu_fraction": 0.0432,
+          "estimated_cpu_energy_j": 0.4942
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.117,
+          "cpu_fraction": 0.0428,
+          "estimated_cpu_energy_j": 0.4898
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.732,
+          "cpu_fraction": 0.035,
+          "estimated_cpu_energy_j": 0.4007
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.443,
+          "cpu_fraction": 0.0292,
+          "estimated_cpu_energy_j": 0.3339
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.367,
+          "cpu_fraction": 0.0277,
+          "estimated_cpu_energy_j": 0.3164
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.274,
+          "cpu_fraction": 0.0258,
+          "estimated_cpu_energy_j": 0.2949
+        },
+        {
+          "process": "binder:6143_E",
+          "cpu_sec": 1.156,
+          "cpu_fraction": 0.0234,
+          "estimated_cpu_energy_j": 0.2676
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.072,
+          "cpu_fraction": 0.0217,
+          "estimated_cpu_energy_j": 0.248
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.064,
+          "cpu_fraction": 0.0215,
+          "estimated_cpu_energy_j": 0.2463
+        },
+        {
+          "process": "binder:6143_F",
+          "cpu_sec": 1.03,
+          "cpu_fraction": 0.0208,
+          "estimated_cpu_energy_j": 0.2383
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 0.959,
+          "cpu_fraction": 0.0194,
+          "estimated_cpu_energy_j": 0.2219
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 0.925,
+          "cpu_fraction": 0.0187,
+          "estimated_cpu_energy_j": 0.2141
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.93,
+      "total_cpu_energy_j": 13.2296,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 36.8,
+        "power.rails.cpu.little": 113.3,
+        "power.rails.cpu.mid": 70.7
+      },
+      "per_process": [
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.751,
+          "cpu_fraction": 0.1215,
+          "estimated_cpu_energy_j": 1.6068
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.334,
+          "cpu_fraction": 0.1126,
+          "estimated_cpu_energy_j": 1.4902
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.472,
+          "cpu_fraction": 0.0944,
+          "estimated_cpu_energy_j": 1.2493
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 3.959,
+          "cpu_fraction": 0.0836,
+          "estimated_cpu_energy_j": 1.1062
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.754,
+          "cpu_fraction": 0.0793,
+          "estimated_cpu_energy_j": 1.0487
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.533,
+          "cpu_fraction": 0.0746,
+          "estimated_cpu_energy_j": 0.9871
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 2.788,
+          "cpu_fraction": 0.0589,
+          "estimated_cpu_energy_j": 0.779
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 2.576,
+          "cpu_fraction": 0.0544,
+          "estimated_cpu_energy_j": 0.7196
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.161,
+          "cpu_fraction": 0.0456,
+          "estimated_cpu_energy_j": 0.6037
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 1.96,
+          "cpu_fraction": 0.0414,
+          "estimated_cpu_energy_j": 0.5476
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.608,
+          "cpu_fraction": 0.034,
+          "estimated_cpu_energy_j": 0.4493
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.536,
+          "cpu_fraction": 0.0324,
+          "estimated_cpu_energy_j": 0.4292
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.281,
+          "cpu_fraction": 0.027,
+          "estimated_cpu_energy_j": 0.3578
+        },
+        {
+          "process": "binder:6143_E",
+          "cpu_sec": 1.111,
+          "cpu_fraction": 0.0235,
+          "estimated_cpu_energy_j": 0.3105
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 0.986,
+          "cpu_fraction": 0.0208,
+          "estimated_cpu_energy_j": 0.2753
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 0.962,
+          "cpu_fraction": 0.0203,
+          "estimated_cpu_energy_j": 0.2687
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 0.95,
+          "cpu_fraction": 0.0201,
+          "estimated_cpu_energy_j": 0.2655
+        },
+        {
+          "process": "CronetNet",
+          "cpu_sec": 0.914,
+          "cpu_fraction": 0.0193,
+          "estimated_cpu_energy_j": 0.2554
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 0.86,
+          "cpu_fraction": 0.0182,
+          "estimated_cpu_energy_j": 0.2403
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 0.857,
+          "cpu_fraction": 0.0181,
+          "estimated_cpu_energy_j": 0.2394
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.93,
+      "total_cpu_energy_j": 10.4313,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 13.2,
+        "power.rails.cpu.little": 101.1,
+        "power.rails.cpu.mid": 59.7
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.847,
+          "cpu_fraction": 0.1167,
+          "estimated_cpu_energy_j": 1.2176
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.692,
+          "cpu_fraction": 0.1136,
+          "estimated_cpu_energy_j": 1.1854
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.189,
+          "cpu_fraction": 0.0836,
+          "estimated_cpu_energy_j": 0.8723
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.066,
+          "cpu_fraction": 0.0812,
+          "estimated_cpu_energy_j": 0.8467
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.941,
+          "cpu_fraction": 0.0787,
+          "estimated_cpu_energy_j": 0.8207
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.407,
+          "cpu_fraction": 0.068,
+          "estimated_cpu_energy_j": 0.7095
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.238,
+          "cpu_fraction": 0.0646,
+          "estimated_cpu_energy_j": 0.6743
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 2.79,
+          "cpu_fraction": 0.0557,
+          "estimated_cpu_energy_j": 0.5811
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.19,
+          "cpu_fraction": 0.0437,
+          "estimated_cpu_energy_j": 0.4561
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.099,
+          "cpu_fraction": 0.0419,
+          "estimated_cpu_energy_j": 0.4372
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.922,
+          "cpu_fraction": 0.0384,
+          "estimated_cpu_energy_j": 0.4003
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 1.893,
+          "cpu_fraction": 0.0378,
+          "estimated_cpu_energy_j": 0.3943
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.526,
+          "cpu_fraction": 0.0305,
+          "estimated_cpu_energy_j": 0.3178
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.371,
+          "cpu_fraction": 0.0274,
+          "estimated_cpu_energy_j": 0.2856
+        },
+        {
+          "process": "binder:6143_4",
+          "cpu_sec": 1.151,
+          "cpu_fraction": 0.023,
+          "estimated_cpu_energy_j": 0.2398
+        },
+        {
+          "process": "binder:6143_A",
+          "cpu_sec": 0.99,
+          "cpu_fraction": 0.0198,
+          "estimated_cpu_energy_j": 0.2062
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 0.981,
+          "cpu_fraction": 0.0196,
+          "estimated_cpu_energy_j": 0.2043
+        },
+        {
+          "process": "binder:6143_E",
+          "cpu_sec": 0.972,
+          "cpu_fraction": 0.0194,
+          "estimated_cpu_energy_j": 0.2023
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 0.93,
+          "cpu_fraction": 0.0186,
+          "estimated_cpu_energy_j": 0.1938
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 0.893,
+          "cpu_fraction": 0.0178,
+          "estimated_cpu_energy_j": 0.186
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.95,
+      "total_cpu_energy_j": 11.5521,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 23.1,
+        "power.rails.cpu.little": 104.7,
+        "power.rails.cpu.mid": 64.9
+      },
+      "per_process": [
+        {
+          "process": "sugov:4",
+          "cpu_sec": 6.015,
+          "cpu_fraction": 0.1205,
+          "estimated_cpu_energy_j": 1.3917
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.875,
+          "cpu_fraction": 0.1177,
+          "estimated_cpu_energy_j": 1.3592
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.088,
+          "cpu_fraction": 0.0819,
+          "estimated_cpu_energy_j": 0.9458
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.03,
+          "cpu_fraction": 0.0807,
+          "estimated_cpu_energy_j": 0.9325
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.961,
+          "cpu_fraction": 0.0793,
+          "estimated_cpu_energy_j": 0.9165
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.427,
+          "cpu_fraction": 0.0686,
+          "estimated_cpu_energy_j": 0.793
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.262,
+          "cpu_fraction": 0.0653,
+          "estimated_cpu_energy_j": 0.7547
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 2.784,
+          "cpu_fraction": 0.0558,
+          "estimated_cpu_energy_j": 0.6442
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.208,
+          "cpu_fraction": 0.0442,
+          "estimated_cpu_energy_j": 0.5108
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.185,
+          "cpu_fraction": 0.0438,
+          "estimated_cpu_energy_j": 0.5055
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 1.911,
+          "cpu_fraction": 0.0383,
+          "estimated_cpu_energy_j": 0.4421
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.795,
+          "cpu_fraction": 0.036,
+          "estimated_cpu_energy_j": 0.4153
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.457,
+          "cpu_fraction": 0.0292,
+          "estimated_cpu_energy_j": 0.3371
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.353,
+          "cpu_fraction": 0.0271,
+          "estimated_cpu_energy_j": 0.3131
+        },
+        {
+          "process": "binder:6143_4",
+          "cpu_sec": 1.099,
+          "cpu_fraction": 0.022,
+          "estimated_cpu_energy_j": 0.2544
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 0.987,
+          "cpu_fraction": 0.0198,
+          "estimated_cpu_energy_j": 0.2284
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 0.926,
+          "cpu_fraction": 0.0185,
+          "estimated_cpu_energy_j": 0.2142
+        },
+        {
+          "process": "binder:6143_A",
+          "cpu_sec": 0.881,
+          "cpu_fraction": 0.0177,
+          "estimated_cpu_energy_j": 0.2039
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 0.87,
+          "cpu_fraction": 0.0174,
+          "estimated_cpu_energy_j": 0.2012
+        },
+        {
+          "process": "dhd_rpm_state_t",
+          "cpu_sec": 0.815,
+          "cpu_fraction": 0.0163,
+          "estimated_cpu_energy_j": 0.1886
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 12.0413,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 30.7,
+        "power.rails.cpu.little": 110.3,
+        "power.rails.cpu.mid": 59.9
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.617,
+          "cpu_fraction": 0.1081,
+          "estimated_cpu_energy_j": 1.3012
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.419,
+          "cpu_fraction": 0.1043,
+          "estimated_cpu_energy_j": 1.2554
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.775,
+          "cpu_fraction": 0.0919,
+          "estimated_cpu_energy_j": 1.1063
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.612,
+          "cpu_fraction": 0.0887,
+          "estimated_cpu_energy_j": 1.0684
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.683,
+          "cpu_fraction": 0.0709,
+          "estimated_cpu_energy_j": 0.8533
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.67,
+          "cpu_fraction": 0.0706,
+          "estimated_cpu_energy_j": 0.8502
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.419,
+          "cpu_fraction": 0.0658,
+          "estimated_cpu_energy_j": 0.7921
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.166,
+          "cpu_fraction": 0.0609,
+          "estimated_cpu_energy_j": 0.7334
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.277,
+          "cpu_fraction": 0.0438,
+          "estimated_cpu_energy_j": 0.5274
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.261,
+          "cpu_fraction": 0.0435,
+          "estimated_cpu_energy_j": 0.5238
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.203,
+          "cpu_fraction": 0.0424,
+          "estimated_cpu_energy_j": 0.5104
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.773,
+          "cpu_fraction": 0.0341,
+          "estimated_cpu_energy_j": 0.4108
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.499,
+          "cpu_fraction": 0.0288,
+          "estimated_cpu_energy_j": 0.3473
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.349,
+          "cpu_fraction": 0.026,
+          "estimated_cpu_energy_j": 0.3126
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.126,
+          "cpu_fraction": 0.0217,
+          "estimated_cpu_energy_j": 0.2607
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.096,
+          "cpu_fraction": 0.0211,
+          "estimated_cpu_energy_j": 0.2538
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.056,
+          "cpu_fraction": 0.0203,
+          "estimated_cpu_energy_j": 0.2446
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.0,
+          "cpu_fraction": 0.0192,
+          "estimated_cpu_energy_j": 0.2317
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 0.99,
+          "cpu_fraction": 0.019,
+          "estimated_cpu_energy_j": 0.2293
+        },
+        {
+          "process": "binder:12013_4",
+          "cpu_sec": 0.986,
+          "cpu_fraction": 0.019,
+          "estimated_cpu_energy_j": 0.2285
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 11.7587,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 28.6,
+        "power.rails.cpu.little": 107.6,
+        "power.rails.cpu.mid": 59.9
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.688,
+          "cpu_fraction": 0.1082,
+          "estimated_cpu_energy_j": 1.2725
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.476,
+          "cpu_fraction": 0.1042,
+          "estimated_cpu_energy_j": 1.225
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.859,
+          "cpu_fraction": 0.0925,
+          "estimated_cpu_energy_j": 1.0872
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.629,
+          "cpu_fraction": 0.0881,
+          "estimated_cpu_energy_j": 1.0355
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.844,
+          "cpu_fraction": 0.0731,
+          "estimated_cpu_energy_j": 0.8601
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.545,
+          "cpu_fraction": 0.0674,
+          "estimated_cpu_energy_j": 0.7931
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.436,
+          "cpu_fraction": 0.0654,
+          "estimated_cpu_energy_j": 0.7688
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.2,
+          "cpu_fraction": 0.0609,
+          "estimated_cpu_energy_j": 0.7159
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.227,
+          "cpu_fraction": 0.0424,
+          "estimated_cpu_energy_j": 0.4982
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.225,
+          "cpu_fraction": 0.0423,
+          "estimated_cpu_energy_j": 0.4978
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.001,
+          "cpu_fraction": 0.0381,
+          "estimated_cpu_energy_j": 0.4477
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.836,
+          "cpu_fraction": 0.0349,
+          "estimated_cpu_energy_j": 0.4108
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.467,
+          "cpu_fraction": 0.0279,
+          "estimated_cpu_energy_j": 0.3283
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.331,
+          "cpu_fraction": 0.0253,
+          "estimated_cpu_energy_j": 0.2978
+        },
+        {
+          "process": "binder:12013_2",
+          "cpu_sec": 1.329,
+          "cpu_fraction": 0.0253,
+          "estimated_cpu_energy_j": 0.2972
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.218,
+          "cpu_fraction": 0.0232,
+          "estimated_cpu_energy_j": 0.2725
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.116,
+          "cpu_fraction": 0.0212,
+          "estimated_cpu_energy_j": 0.2498
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.114,
+          "cpu_fraction": 0.0212,
+          "estimated_cpu_energy_j": 0.2493
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 1.013,
+          "cpu_fraction": 0.0193,
+          "estimated_cpu_energy_j": 0.2267
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.003,
+          "cpu_fraction": 0.0191,
+          "estimated_cpu_energy_j": 0.2244
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.95,
+      "total_cpu_energy_j": 12.0078,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 30.9,
+        "power.rails.cpu.little": 108.6,
+        "power.rails.cpu.mid": 60.8
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.882,
+          "cpu_fraction": 0.1117,
+          "estimated_cpu_energy_j": 1.3418
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.627,
+          "cpu_fraction": 0.1069,
+          "estimated_cpu_energy_j": 1.2836
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.841,
+          "cpu_fraction": 0.092,
+          "estimated_cpu_energy_j": 1.1043
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.565,
+          "cpu_fraction": 0.0867,
+          "estimated_cpu_energy_j": 1.0413
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.816,
+          "cpu_fraction": 0.0725,
+          "estimated_cpu_energy_j": 0.8705
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.509,
+          "cpu_fraction": 0.0667,
+          "estimated_cpu_energy_j": 0.8004
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.443,
+          "cpu_fraction": 0.0654,
+          "estimated_cpu_energy_j": 0.7854
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.178,
+          "cpu_fraction": 0.0604,
+          "estimated_cpu_energy_j": 0.7249
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.311,
+          "cpu_fraction": 0.0439,
+          "estimated_cpu_energy_j": 0.5272
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.31,
+          "cpu_fraction": 0.0439,
+          "estimated_cpu_energy_j": 0.5269
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.229,
+          "cpu_fraction": 0.0423,
+          "estimated_cpu_energy_j": 0.5084
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.554,
+          "cpu_fraction": 0.0295,
+          "estimated_cpu_energy_j": 0.3546
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.453,
+          "cpu_fraction": 0.0276,
+          "estimated_cpu_energy_j": 0.3313
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.45,
+          "cpu_fraction": 0.0275,
+          "estimated_cpu_energy_j": 0.3308
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.163,
+          "cpu_fraction": 0.0221,
+          "estimated_cpu_energy_j": 0.2653
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.123,
+          "cpu_fraction": 0.0213,
+          "estimated_cpu_energy_j": 0.2562
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.12,
+          "cpu_fraction": 0.0213,
+          "estimated_cpu_energy_j": 0.2555
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 1.026,
+          "cpu_fraction": 0.0195,
+          "estimated_cpu_energy_j": 0.2339
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.024,
+          "cpu_fraction": 0.0195,
+          "estimated_cpu_energy_j": 0.2336
+        },
+        {
+          "process": "binder:12013_F",
+          "cpu_sec": 1.016,
+          "cpu_fraction": 0.0193,
+          "estimated_cpu_energy_j": 0.2317
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.95,
+      "total_cpu_energy_j": 10.9526,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 17.1,
+        "power.rails.cpu.little": 105.6,
+        "power.rails.cpu.mid": 60.0
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.594,
+          "cpu_fraction": 0.1088,
+          "estimated_cpu_energy_j": 1.1916
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.536,
+          "cpu_fraction": 0.1077,
+          "estimated_cpu_energy_j": 1.1792
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.804,
+          "cpu_fraction": 0.0934,
+          "estimated_cpu_energy_j": 1.0233
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.521,
+          "cpu_fraction": 0.0879,
+          "estimated_cpu_energy_j": 0.963
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.642,
+          "cpu_fraction": 0.0708,
+          "estimated_cpu_energy_j": 0.7756
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.535,
+          "cpu_fraction": 0.0687,
+          "estimated_cpu_energy_j": 0.753
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.172,
+          "cpu_fraction": 0.0617,
+          "estimated_cpu_energy_j": 0.6757
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.159,
+          "cpu_fraction": 0.0614,
+          "estimated_cpu_energy_j": 0.673
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.261,
+          "cpu_fraction": 0.044,
+          "estimated_cpu_energy_j": 0.4817
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.196,
+          "cpu_fraction": 0.0427,
+          "estimated_cpu_energy_j": 0.4677
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.955,
+          "cpu_fraction": 0.038,
+          "estimated_cpu_energy_j": 0.4164
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.722,
+          "cpu_fraction": 0.0335,
+          "estimated_cpu_energy_j": 0.3669
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.437,
+          "cpu_fraction": 0.0279,
+          "estimated_cpu_energy_j": 0.3061
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.393,
+          "cpu_fraction": 0.0271,
+          "estimated_cpu_energy_j": 0.2968
+        },
+        {
+          "process": "binder:12013_4",
+          "cpu_sec": 1.14,
+          "cpu_fraction": 0.0222,
+          "estimated_cpu_energy_j": 0.2427
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.119,
+          "cpu_fraction": 0.0218,
+          "estimated_cpu_energy_j": 0.2384
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.118,
+          "cpu_fraction": 0.0217,
+          "estimated_cpu_energy_j": 0.238
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.091,
+          "cpu_fraction": 0.0212,
+          "estimated_cpu_energy_j": 0.2323
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 1.033,
+          "cpu_fraction": 0.0201,
+          "estimated_cpu_energy_j": 0.2201
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 0.991,
+          "cpu_fraction": 0.0193,
+          "estimated_cpu_energy_j": 0.211
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.93,
+      "total_cpu_energy_j": 10.9587,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 18.8,
+        "power.rails.cpu.little": 105.1,
+        "power.rails.cpu.mid": 59.0
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 5.862,
+          "cpu_fraction": 0.1135,
+          "estimated_cpu_energy_j": 1.2442
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.275,
+          "cpu_fraction": 0.1021,
+          "estimated_cpu_energy_j": 1.1194
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.771,
+          "cpu_fraction": 0.0924,
+          "estimated_cpu_energy_j": 1.0125
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.56,
+          "cpu_fraction": 0.0883,
+          "estimated_cpu_energy_j": 0.9677
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.625,
+          "cpu_fraction": 0.0702,
+          "estimated_cpu_energy_j": 0.7693
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.438,
+          "cpu_fraction": 0.0666,
+          "estimated_cpu_energy_j": 0.7297
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.121,
+          "cpu_fraction": 0.0604,
+          "estimated_cpu_energy_j": 0.6623
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.118,
+          "cpu_fraction": 0.0604,
+          "estimated_cpu_energy_j": 0.6618
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.209,
+          "cpu_fraction": 0.0428,
+          "estimated_cpu_energy_j": 0.4687
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.187,
+          "cpu_fraction": 0.0424,
+          "estimated_cpu_energy_j": 0.4642
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.137,
+          "cpu_fraction": 0.0414,
+          "estimated_cpu_energy_j": 0.4536
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.894,
+          "cpu_fraction": 0.0367,
+          "estimated_cpu_energy_j": 0.402
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.434,
+          "cpu_fraction": 0.0278,
+          "estimated_cpu_energy_j": 0.3043
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.391,
+          "cpu_fraction": 0.0269,
+          "estimated_cpu_energy_j": 0.2953
+        },
+        {
+          "process": "binder:12013_2",
+          "cpu_sec": 1.276,
+          "cpu_fraction": 0.0247,
+          "estimated_cpu_energy_j": 0.2707
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.17,
+          "cpu_fraction": 0.0227,
+          "estimated_cpu_energy_j": 0.2483
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.113,
+          "cpu_fraction": 0.0216,
+          "estimated_cpu_energy_j": 0.2363
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.08,
+          "cpu_fraction": 0.0209,
+          "estimated_cpu_energy_j": 0.2293
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 0.993,
+          "cpu_fraction": 0.0192,
+          "estimated_cpu_energy_j": 0.2107
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 0.982,
+          "cpu_fraction": 0.019,
+          "estimated_cpu_energy_j": 0.2085
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.95,
+      "total_cpu_energy_j": 11.9338,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 28.3,
+        "power.rails.cpu.little": 110.0,
+        "power.rails.cpu.mid": 60.7
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 6.159,
+          "cpu_fraction": 0.1159,
+          "estimated_cpu_energy_j": 1.3832
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.425,
+          "cpu_fraction": 0.1021,
+          "estimated_cpu_energy_j": 1.2186
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.985,
+          "cpu_fraction": 0.0938,
+          "estimated_cpu_energy_j": 1.1196
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.652,
+          "cpu_fraction": 0.0875,
+          "estimated_cpu_energy_j": 1.0448
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.684,
+          "cpu_fraction": 0.0693,
+          "estimated_cpu_energy_j": 0.8274
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.459,
+          "cpu_fraction": 0.0651,
+          "estimated_cpu_energy_j": 0.777
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.346,
+          "cpu_fraction": 0.063,
+          "estimated_cpu_energy_j": 0.7515
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.153,
+          "cpu_fraction": 0.0593,
+          "estimated_cpu_energy_j": 0.7082
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.236,
+          "cpu_fraction": 0.0421,
+          "estimated_cpu_energy_j": 0.5022
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.178,
+          "cpu_fraction": 0.041,
+          "estimated_cpu_energy_j": 0.4893
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.158,
+          "cpu_fraction": 0.0406,
+          "estimated_cpu_energy_j": 0.4848
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 2.062,
+          "cpu_fraction": 0.0388,
+          "estimated_cpu_energy_j": 0.4632
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.444,
+          "cpu_fraction": 0.0272,
+          "estimated_cpu_energy_j": 0.3243
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.416,
+          "cpu_fraction": 0.0267,
+          "estimated_cpu_energy_j": 0.3181
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.362,
+          "cpu_fraction": 0.0256,
+          "estimated_cpu_energy_j": 0.3058
+        },
+        {
+          "process": "binder:12013_F",
+          "cpu_sec": 1.156,
+          "cpu_fraction": 0.0217,
+          "estimated_cpu_energy_j": 0.2596
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.12,
+          "cpu_fraction": 0.0211,
+          "estimated_cpu_energy_j": 0.2516
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.107,
+          "cpu_fraction": 0.0208,
+          "estimated_cpu_energy_j": 0.2486
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.028,
+          "cpu_fraction": 0.0193,
+          "estimated_cpu_energy_j": 0.2309
+        },
+        {
+          "process": "Output Looper",
+          "cpu_sec": 1.003,
+          "cpu_fraction": 0.0189,
+          "estimated_cpu_energy_j": 0.2253
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.96,
+      "total_cpu_energy_j": 11.0999,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 19.3,
+        "power.rails.cpu.little": 109.0,
+        "power.rails.cpu.mid": 56.9
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 6.172,
+          "cpu_fraction": 0.1178,
+          "estimated_cpu_energy_j": 1.3079
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.524,
+          "cpu_fraction": 0.1055,
+          "estimated_cpu_energy_j": 1.1706
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.966,
+          "cpu_fraction": 0.0948,
+          "estimated_cpu_energy_j": 1.0523
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.604,
+          "cpu_fraction": 0.0879,
+          "estimated_cpu_energy_j": 0.9756
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.711,
+          "cpu_fraction": 0.0708,
+          "estimated_cpu_energy_j": 0.7864
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.397,
+          "cpu_fraction": 0.0649,
+          "estimated_cpu_energy_j": 0.7199
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.322,
+          "cpu_fraction": 0.0634,
+          "estimated_cpu_energy_j": 0.7041
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.156,
+          "cpu_fraction": 0.0603,
+          "estimated_cpu_energy_j": 0.6688
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.215,
+          "cpu_fraction": 0.0423,
+          "estimated_cpu_energy_j": 0.4693
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.16,
+          "cpu_fraction": 0.0412,
+          "estimated_cpu_energy_j": 0.4576
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.873,
+          "cpu_fraction": 0.0358,
+          "estimated_cpu_energy_j": 0.3969
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.596,
+          "cpu_fraction": 0.0305,
+          "estimated_cpu_energy_j": 0.3382
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.449,
+          "cpu_fraction": 0.0277,
+          "estimated_cpu_energy_j": 0.307
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.424,
+          "cpu_fraction": 0.0272,
+          "estimated_cpu_energy_j": 0.3019
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.307,
+          "cpu_fraction": 0.025,
+          "estimated_cpu_energy_j": 0.2771
+        },
+        {
+          "process": "binder:12013_F",
+          "cpu_sec": 1.204,
+          "cpu_fraction": 0.023,
+          "estimated_cpu_energy_j": 0.2551
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.148,
+          "cpu_fraction": 0.0219,
+          "estimated_cpu_energy_j": 0.2432
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.109,
+          "cpu_fraction": 0.0212,
+          "estimated_cpu_energy_j": 0.235
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.032,
+          "cpu_fraction": 0.0197,
+          "estimated_cpu_energy_j": 0.2186
+        },
+        {
+          "process": "binder:12013_4",
+          "cpu_sec": 1.011,
+          "cpu_fraction": 0.0193,
+          "estimated_cpu_energy_j": 0.2142
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.95,
+      "total_cpu_energy_j": 10.9743,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 17.8,
+        "power.rails.cpu.little": 107.5,
+        "power.rails.cpu.mid": 57.7
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 6.106,
+          "cpu_fraction": 0.1168,
+          "estimated_cpu_energy_j": 1.2814
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.395,
+          "cpu_fraction": 0.1032,
+          "estimated_cpu_energy_j": 1.132
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.87,
+          "cpu_fraction": 0.0931,
+          "estimated_cpu_energy_j": 1.0219
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.655,
+          "cpu_fraction": 0.089,
+          "estimated_cpu_energy_j": 0.9769
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.75,
+          "cpu_fraction": 0.0717,
+          "estimated_cpu_energy_j": 0.7869
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.445,
+          "cpu_fraction": 0.0659,
+          "estimated_cpu_energy_j": 0.7229
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.444,
+          "cpu_fraction": 0.0659,
+          "estimated_cpu_energy_j": 0.7227
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.13,
+          "cpu_fraction": 0.0598,
+          "estimated_cpu_energy_j": 0.6568
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.228,
+          "cpu_fraction": 0.0426,
+          "estimated_cpu_energy_j": 0.4676
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.183,
+          "cpu_fraction": 0.0417,
+          "estimated_cpu_energy_j": 0.4581
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.992,
+          "cpu_fraction": 0.0381,
+          "estimated_cpu_energy_j": 0.418
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.585,
+          "cpu_fraction": 0.0303,
+          "estimated_cpu_energy_j": 0.3325
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.454,
+          "cpu_fraction": 0.0278,
+          "estimated_cpu_energy_j": 0.3052
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.42,
+          "cpu_fraction": 0.0272,
+          "estimated_cpu_energy_j": 0.298
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.218,
+          "cpu_fraction": 0.0233,
+          "estimated_cpu_energy_j": 0.2556
+        },
+        {
+          "process": "binder:12013_3",
+          "cpu_sec": 1.13,
+          "cpu_fraction": 0.0216,
+          "estimated_cpu_energy_j": 0.2372
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.113,
+          "cpu_fraction": 0.0213,
+          "estimated_cpu_energy_j": 0.2336
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.097,
+          "cpu_fraction": 0.021,
+          "estimated_cpu_energy_j": 0.2303
+        },
+        {
+          "process": "binder:12013_7",
+          "cpu_sec": 1.062,
+          "cpu_fraction": 0.0203,
+          "estimated_cpu_energy_j": 0.2228
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.02,
+          "cpu_fraction": 0.0195,
+          "estimated_cpu_energy_j": 0.214
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.96,
+      "total_cpu_energy_j": 12.039,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 30.6,
+        "power.rails.cpu.little": 111.0,
+        "power.rails.cpu.mid": 59.1
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 6.078,
+          "cpu_fraction": 0.1172,
+          "estimated_cpu_energy_j": 1.4108
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.328,
+          "cpu_fraction": 0.1027,
+          "estimated_cpu_energy_j": 1.2367
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.882,
+          "cpu_fraction": 0.0941,
+          "estimated_cpu_energy_j": 1.1334
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.618,
+          "cpu_fraction": 0.089,
+          "estimated_cpu_energy_j": 1.0719
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.625,
+          "cpu_fraction": 0.0699,
+          "estimated_cpu_energy_j": 0.8414
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.468,
+          "cpu_fraction": 0.0669,
+          "estimated_cpu_energy_j": 0.8049
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.155,
+          "cpu_fraction": 0.0608,
+          "estimated_cpu_energy_j": 0.7323
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.144,
+          "cpu_fraction": 0.0606,
+          "estimated_cpu_energy_j": 0.7298
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.224,
+          "cpu_fraction": 0.0429,
+          "estimated_cpu_energy_j": 0.5162
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.177,
+          "cpu_fraction": 0.042,
+          "estimated_cpu_energy_j": 0.5054
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.965,
+          "cpu_fraction": 0.0379,
+          "estimated_cpu_energy_j": 0.4562
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.506,
+          "cpu_fraction": 0.029,
+          "estimated_cpu_energy_j": 0.3497
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.46,
+          "cpu_fraction": 0.0282,
+          "estimated_cpu_energy_j": 0.3389
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.411,
+          "cpu_fraction": 0.0272,
+          "estimated_cpu_energy_j": 0.3275
+        },
+        {
+          "process": "binder:12013_4",
+          "cpu_sec": 1.231,
+          "cpu_fraction": 0.0237,
+          "estimated_cpu_energy_j": 0.2857
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.22,
+          "cpu_fraction": 0.0235,
+          "estimated_cpu_energy_j": 0.2832
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.126,
+          "cpu_fraction": 0.0217,
+          "estimated_cpu_energy_j": 0.2615
+        },
+        {
+          "process": "binder:12013_F",
+          "cpu_sec": 1.126,
+          "cpu_fraction": 0.0217,
+          "estimated_cpu_energy_j": 0.2614
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.113,
+          "cpu_fraction": 0.0215,
+          "estimated_cpu_energy_j": 0.2584
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.007,
+          "cpu_fraction": 0.0194,
+          "estimated_cpu_energy_j": 0.2338
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.93,
+      "total_cpu_energy_j": 11.0643,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 16.6,
+        "power.rails.cpu.little": 106.2,
+        "power.rails.cpu.mid": 61.8
+      },
+      "per_process": [
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 6.141,
+          "cpu_fraction": 0.1157,
+          "estimated_cpu_energy_j": 1.2802
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 5.544,
+          "cpu_fraction": 0.1045,
+          "estimated_cpu_energy_j": 1.156
+        },
+        {
+          "process": "ExoPlayer:Playb",
+          "cpu_sec": 4.846,
+          "cpu_fraction": 0.0913,
+          "estimated_cpu_energy_j": 1.0104
+        },
+        {
+          "process": "MediaCodec_loop",
+          "cpu_sec": 4.63,
+          "cpu_fraction": 0.0873,
+          "estimated_cpu_energy_j": 0.9654
+        },
+        {
+          "process": "android.youtube",
+          "cpu_sec": 3.717,
+          "cpu_fraction": 0.07,
+          "estimated_cpu_energy_j": 0.775
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.445,
+          "cpu_fraction": 0.0649,
+          "estimated_cpu_energy_j": 0.7182
+        },
+        {
+          "process": "RenderThread",
+          "cpu_sec": 3.355,
+          "cpu_fraction": 0.0632,
+          "estimated_cpu_energy_j": 0.6994
+        },
+        {
+          "process": "DecodeLoop",
+          "cpu_sec": 3.139,
+          "cpu_fraction": 0.0591,
+          "estimated_cpu_energy_j": 0.6544
+        },
+        {
+          "process": "ExoPlayer:Simpl",
+          "cpu_sec": 2.203,
+          "cpu_fraction": 0.0415,
+          "estimated_cpu_energy_j": 0.4593
+        },
+        {
+          "process": "CodecLooper",
+          "cpu_sec": 2.193,
+          "cpu_fraction": 0.0413,
+          "estimated_cpu_energy_j": 0.4573
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.166,
+          "cpu_fraction": 0.0408,
+          "estimated_cpu_energy_j": 0.4515
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 2.084,
+          "cpu_fraction": 0.0393,
+          "estimated_cpu_energy_j": 0.4345
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.464,
+          "cpu_fraction": 0.0276,
+          "estimated_cpu_energy_j": 0.3053
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.424,
+          "cpu_fraction": 0.0268,
+          "estimated_cpu_energy_j": 0.2969
+        },
+        {
+          "process": "binder:12013_3",
+          "cpu_sec": 1.238,
+          "cpu_fraction": 0.0233,
+          "estimated_cpu_energy_j": 0.2582
+        },
+        {
+          "process": "android.display",
+          "cpu_sec": 1.218,
+          "cpu_fraction": 0.023,
+          "estimated_cpu_energy_j": 0.254
+        },
+        {
+          "process": "bigo_worker_thr",
+          "cpu_sec": 1.113,
+          "cpu_fraction": 0.021,
+          "estimated_cpu_energy_j": 0.232
+        },
+        {
+          "process": "AudioOut_15",
+          "cpu_sec": 1.096,
+          "cpu_fraction": 0.0206,
+          "estimated_cpu_energy_j": 0.2285
+        },
+        {
+          "process": "binder:12013_6",
+          "cpu_sec": 1.049,
+          "cpu_fraction": 0.0198,
+          "estimated_cpu_energy_j": 0.2187
+        },
+        {
+          "process": "traced_probes",
+          "cpu_sec": 1.003,
+          "cpu_fraction": 0.0189,
+          "estimated_cpu_energy_j": 0.2091
+        }
+      ]
+    }
+  ],
+  "chrome_energy_j": [
+    {
+      "trace_duration_s": 59.96,
+      "total_cpu_energy_j": 40.3473,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 345.0,
+        "power.rails.cpu.little": 162.5,
+        "power.rails.cpu.mid": 165.4
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 17.03,
+          "cpu_fraction": 0.2125,
+          "estimated_cpu_energy_j": 8.5757
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 6.513,
+          "cpu_fraction": 0.0813,
+          "estimated_cpu_energy_j": 3.2796
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 6.351,
+          "cpu_fraction": 0.0793,
+          "estimated_cpu_energy_j": 3.1979
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 5.395,
+          "cpu_fraction": 0.0673,
+          "estimated_cpu_energy_j": 2.7167
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 4.958,
+          "cpu_fraction": 0.0619,
+          "estimated_cpu_energy_j": 2.4965
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 4.83,
+          "cpu_fraction": 0.0603,
+          "estimated_cpu_energy_j": 2.4322
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.715,
+          "cpu_fraction": 0.0588,
+          "estimated_cpu_energy_j": 2.374
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 3.766,
+          "cpu_fraction": 0.047,
+          "estimated_cpu_energy_j": 1.8962
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 3.458,
+          "cpu_fraction": 0.0432,
+          "estimated_cpu_energy_j": 1.7415
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.574,
+          "cpu_fraction": 0.0321,
+          "estimated_cpu_energy_j": 1.2963
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 2.53,
+          "cpu_fraction": 0.0316,
+          "estimated_cpu_energy_j": 1.2741
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.446,
+          "cpu_fraction": 0.0305,
+          "estimated_cpu_energy_j": 1.2317
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.337,
+          "cpu_fraction": 0.0292,
+          "estimated_cpu_energy_j": 1.177
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.208,
+          "cpu_fraction": 0.0276,
+          "estimated_cpu_energy_j": 1.1117
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 2.13,
+          "cpu_fraction": 0.0266,
+          "estimated_cpu_energy_j": 1.0724
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 2.035,
+          "cpu_fraction": 0.0254,
+          "estimated_cpu_energy_j": 1.0248
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 2.021,
+          "cpu_fraction": 0.0252,
+          "estimated_cpu_energy_j": 1.0177
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.971,
+          "cpu_fraction": 0.0246,
+          "estimated_cpu_energy_j": 0.9928
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.437,
+          "cpu_fraction": 0.0179,
+          "estimated_cpu_energy_j": 0.7237
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.419,
+          "cpu_fraction": 0.0177,
+          "estimated_cpu_energy_j": 0.7147
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.93,
+      "total_cpu_energy_j": 48.2615,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 377.4,
+        "power.rails.cpu.little": 189.4,
+        "power.rails.cpu.mid": 238.5
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 17.628,
+          "cpu_fraction": 0.2112,
+          "estimated_cpu_energy_j": 10.1935
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 6.412,
+          "cpu_fraction": 0.0768,
+          "estimated_cpu_energy_j": 3.7077
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 6.399,
+          "cpu_fraction": 0.0767,
+          "estimated_cpu_energy_j": 3.7004
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 5.545,
+          "cpu_fraction": 0.0664,
+          "estimated_cpu_energy_j": 3.2066
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.165,
+          "cpu_fraction": 0.0619,
+          "estimated_cpu_energy_j": 2.9865
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 5.045,
+          "cpu_fraction": 0.0605,
+          "estimated_cpu_energy_j": 2.9175
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 4.794,
+          "cpu_fraction": 0.0574,
+          "estimated_cpu_energy_j": 2.7722
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 3.876,
+          "cpu_fraction": 0.0464,
+          "estimated_cpu_energy_j": 2.2411
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 3.637,
+          "cpu_fraction": 0.0436,
+          "estimated_cpu_energy_j": 2.1034
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.716,
+          "cpu_fraction": 0.0325,
+          "estimated_cpu_energy_j": 1.5707
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.604,
+          "cpu_fraction": 0.0312,
+          "estimated_cpu_energy_j": 1.5059
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.48,
+          "cpu_fraction": 0.0297,
+          "estimated_cpu_energy_j": 1.4338
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 2.415,
+          "cpu_fraction": 0.0289,
+          "estimated_cpu_energy_j": 1.3966
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.395,
+          "cpu_fraction": 0.0287,
+          "estimated_cpu_energy_j": 1.3849
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 2.391,
+          "cpu_fraction": 0.0286,
+          "estimated_cpu_energy_j": 1.3826
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 2.375,
+          "cpu_fraction": 0.0285,
+          "estimated_cpu_energy_j": 1.3731
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 2.179,
+          "cpu_fraction": 0.0261,
+          "estimated_cpu_energy_j": 1.2602
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 2.06,
+          "cpu_fraction": 0.0247,
+          "estimated_cpu_energy_j": 1.1911
+        },
+        {
+          "process": "binder:1440_1E",
+          "cpu_sec": 1.749,
+          "cpu_fraction": 0.021,
+          "estimated_cpu_energy_j": 1.0112
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.595,
+          "cpu_fraction": 0.0191,
+          "estimated_cpu_energy_j": 0.9225
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.95,
+      "total_cpu_energy_j": 29.7681,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 217.1,
+        "power.rails.cpu.little": 136.2,
+        "power.rails.cpu.mid": 143.3
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 13.034,
+          "cpu_fraction": 0.2184,
+          "estimated_cpu_energy_j": 6.5024
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.287,
+          "cpu_fraction": 0.0718,
+          "estimated_cpu_energy_j": 2.1388
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.241,
+          "cpu_fraction": 0.0711,
+          "estimated_cpu_energy_j": 2.1156
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.118,
+          "cpu_fraction": 0.069,
+          "estimated_cpu_energy_j": 2.0545
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.974,
+          "cpu_fraction": 0.0666,
+          "estimated_cpu_energy_j": 1.9825
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 3.695,
+          "cpu_fraction": 0.0619,
+          "estimated_cpu_energy_j": 1.8434
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.671,
+          "cpu_fraction": 0.0615,
+          "estimated_cpu_energy_j": 1.8312
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 2.848,
+          "cpu_fraction": 0.0477,
+          "estimated_cpu_energy_j": 1.4208
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 2.469,
+          "cpu_fraction": 0.0414,
+          "estimated_cpu_energy_j": 1.2318
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 1.97,
+          "cpu_fraction": 0.033,
+          "estimated_cpu_energy_j": 0.9829
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 1.934,
+          "cpu_fraction": 0.0324,
+          "estimated_cpu_energy_j": 0.9646
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.819,
+          "cpu_fraction": 0.0305,
+          "estimated_cpu_energy_j": 0.9073
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 1.752,
+          "cpu_fraction": 0.0294,
+          "estimated_cpu_energy_j": 0.8738
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 1.728,
+          "cpu_fraction": 0.029,
+          "estimated_cpu_energy_j": 0.8621
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.708,
+          "cpu_fraction": 0.0286,
+          "estimated_cpu_energy_j": 0.8522
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.54,
+          "cpu_fraction": 0.0258,
+          "estimated_cpu_energy_j": 0.7683
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.477,
+          "cpu_fraction": 0.0248,
+          "estimated_cpu_energy_j": 0.737
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.226,
+          "cpu_fraction": 0.0205,
+          "estimated_cpu_energy_j": 0.6116
+        },
+        {
+          "process": ".android.chrome",
+          "cpu_sec": 1.097,
+          "cpu_fraction": 0.0184,
+          "estimated_cpu_energy_j": 0.547
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.083,
+          "cpu_fraction": 0.0182,
+          "estimated_cpu_energy_j": 0.5404
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.95,
+      "total_cpu_energy_j": 35.2781,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 289.6,
+        "power.rails.cpu.little": 150.1,
+        "power.rails.cpu.mid": 148.7
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 14.84,
+          "cpu_fraction": 0.2184,
+          "estimated_cpu_energy_j": 7.7054
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.867,
+          "cpu_fraction": 0.0716,
+          "estimated_cpu_energy_j": 2.5273
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 4.625,
+          "cpu_fraction": 0.0681,
+          "estimated_cpu_energy_j": 2.4015
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.561,
+          "cpu_fraction": 0.0671,
+          "estimated_cpu_energy_j": 2.3684
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.359,
+          "cpu_fraction": 0.0642,
+          "estimated_cpu_energy_j": 2.2634
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 4.335,
+          "cpu_fraction": 0.0638,
+          "estimated_cpu_energy_j": 2.2509
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 4.09,
+          "cpu_fraction": 0.0602,
+          "estimated_cpu_energy_j": 2.1236
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 3.294,
+          "cpu_fraction": 0.0485,
+          "estimated_cpu_energy_j": 1.7103
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 2.916,
+          "cpu_fraction": 0.0429,
+          "estimated_cpu_energy_j": 1.5141
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.219,
+          "cpu_fraction": 0.0327,
+          "estimated_cpu_energy_j": 1.1524
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 2.189,
+          "cpu_fraction": 0.0322,
+          "estimated_cpu_energy_j": 1.1365
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.17,
+          "cpu_fraction": 0.0319,
+          "estimated_cpu_energy_j": 1.1265
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.048,
+          "cpu_fraction": 0.0301,
+          "estimated_cpu_energy_j": 1.0632
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 1.979,
+          "cpu_fraction": 0.0291,
+          "estimated_cpu_energy_j": 1.0273
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.792,
+          "cpu_fraction": 0.0264,
+          "estimated_cpu_energy_j": 0.9307
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.767,
+          "cpu_fraction": 0.026,
+          "estimated_cpu_energy_j": 0.9177
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.604,
+          "cpu_fraction": 0.0236,
+          "estimated_cpu_energy_j": 0.833
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.582,
+          "cpu_fraction": 0.0233,
+          "estimated_cpu_energy_j": 0.8215
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.37,
+          "cpu_fraction": 0.0202,
+          "estimated_cpu_energy_j": 0.7113
+        },
+        {
+          "process": ".android.chrome",
+          "cpu_sec": 1.335,
+          "cpu_fraction": 0.0197,
+          "estimated_cpu_energy_j": 0.6932
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 26.5671,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 175.3,
+        "power.rails.cpu.little": 118.7,
+        "power.rails.cpu.mid": 149.2
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 9.371,
+          "cpu_fraction": 0.1927,
+          "estimated_cpu_energy_j": 5.1195
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 3.944,
+          "cpu_fraction": 0.0811,
+          "estimated_cpu_energy_j": 2.1544
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.875,
+          "cpu_fraction": 0.0797,
+          "estimated_cpu_energy_j": 2.1171
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 3.503,
+          "cpu_fraction": 0.072,
+          "estimated_cpu_energy_j": 1.9138
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 3.264,
+          "cpu_fraction": 0.0671,
+          "estimated_cpu_energy_j": 1.7828
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 2.775,
+          "cpu_fraction": 0.0571,
+          "estimated_cpu_energy_j": 1.5159
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 2.533,
+          "cpu_fraction": 0.0521,
+          "estimated_cpu_energy_j": 1.3838
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 2.454,
+          "cpu_fraction": 0.0505,
+          "estimated_cpu_energy_j": 1.3407
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 1.76,
+          "cpu_fraction": 0.0362,
+          "estimated_cpu_energy_j": 0.9613
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 1.737,
+          "cpu_fraction": 0.0357,
+          "estimated_cpu_energy_j": 0.9487
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 1.568,
+          "cpu_fraction": 0.0323,
+          "estimated_cpu_energy_j": 0.8568
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 1.558,
+          "cpu_fraction": 0.032,
+          "estimated_cpu_energy_j": 0.8512
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 1.546,
+          "cpu_fraction": 0.0318,
+          "estimated_cpu_energy_j": 0.8443
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.501,
+          "cpu_fraction": 0.0309,
+          "estimated_cpu_energy_j": 0.8198
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.433,
+          "cpu_fraction": 0.0295,
+          "estimated_cpu_energy_j": 0.7827
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.291,
+          "cpu_fraction": 0.0265,
+          "estimated_cpu_energy_j": 0.705
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.255,
+          "cpu_fraction": 0.0258,
+          "estimated_cpu_energy_j": 0.6858
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.158,
+          "cpu_fraction": 0.0238,
+          "estimated_cpu_energy_j": 0.6323
+        },
+        {
+          "process": ".android.chrome",
+          "cpu_sec": 1.108,
+          "cpu_fraction": 0.0228,
+          "estimated_cpu_energy_j": 0.6055
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 0.999,
+          "cpu_fraction": 0.0205,
+          "estimated_cpu_energy_j": 0.5457
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 25.4144,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 154.0,
+        "power.rails.cpu.little": 117.1,
+        "power.rails.cpu.mid": 152.9
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 9.253,
+          "cpu_fraction": 0.1822,
+          "estimated_cpu_energy_j": 4.6315
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 3.94,
+          "cpu_fraction": 0.0776,
+          "estimated_cpu_energy_j": 1.9719
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 3.846,
+          "cpu_fraction": 0.0757,
+          "estimated_cpu_energy_j": 1.9251
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 3.743,
+          "cpu_fraction": 0.0737,
+          "estimated_cpu_energy_j": 1.8734
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 3.508,
+          "cpu_fraction": 0.0691,
+          "estimated_cpu_energy_j": 1.7556
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 2.924,
+          "cpu_fraction": 0.0576,
+          "estimated_cpu_energy_j": 1.4634
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 2.739,
+          "cpu_fraction": 0.054,
+          "estimated_cpu_energy_j": 1.3711
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 2.511,
+          "cpu_fraction": 0.0494,
+          "estimated_cpu_energy_j": 1.2566
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 1.874,
+          "cpu_fraction": 0.0369,
+          "estimated_cpu_energy_j": 0.9377
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 1.866,
+          "cpu_fraction": 0.0368,
+          "estimated_cpu_energy_j": 0.9342
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 1.853,
+          "cpu_fraction": 0.0365,
+          "estimated_cpu_energy_j": 0.9275
+        },
+        {
+          "process": "storaged",
+          "cpu_sec": 1.746,
+          "cpu_fraction": 0.0344,
+          "estimated_cpu_energy_j": 0.8739
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 1.614,
+          "cpu_fraction": 0.0318,
+          "estimated_cpu_energy_j": 0.8079
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.529,
+          "cpu_fraction": 0.0301,
+          "estimated_cpu_energy_j": 0.7654
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 1.522,
+          "cpu_fraction": 0.03,
+          "estimated_cpu_energy_j": 0.7619
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.422,
+          "cpu_fraction": 0.028,
+          "estimated_cpu_energy_j": 0.712
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.336,
+          "cpu_fraction": 0.0263,
+          "estimated_cpu_energy_j": 0.6686
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.225,
+          "cpu_fraction": 0.0241,
+          "estimated_cpu_energy_j": 0.6131
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.177,
+          "cpu_fraction": 0.0232,
+          "estimated_cpu_energy_j": 0.5892
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.148,
+          "cpu_fraction": 0.0226,
+          "estimated_cpu_energy_j": 0.5745
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 29.0985,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 189.1,
+        "power.rails.cpu.little": 128.9,
+        "power.rails.cpu.mid": 167.6
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 11.581,
+          "cpu_fraction": 0.1819,
+          "estimated_cpu_energy_j": 5.2931
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.449,
+          "cpu_fraction": 0.0856,
+          "estimated_cpu_energy_j": 2.4903
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.502,
+          "cpu_fraction": 0.0707,
+          "estimated_cpu_energy_j": 2.0576
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.393,
+          "cpu_fraction": 0.069,
+          "estimated_cpu_energy_j": 2.0076
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 4.13,
+          "cpu_fraction": 0.0649,
+          "estimated_cpu_energy_j": 1.8877
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.0,
+          "cpu_fraction": 0.0628,
+          "estimated_cpu_energy_j": 1.8283
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.659,
+          "cpu_fraction": 0.0575,
+          "estimated_cpu_energy_j": 1.6722
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.263,
+          "cpu_fraction": 0.0513,
+          "estimated_cpu_energy_j": 1.4914
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.573,
+          "cpu_fraction": 0.0404,
+          "estimated_cpu_energy_j": 1.1758
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.475,
+          "cpu_fraction": 0.0389,
+          "estimated_cpu_energy_j": 1.1312
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.327,
+          "cpu_fraction": 0.0365,
+          "estimated_cpu_energy_j": 1.0633
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.138,
+          "cpu_fraction": 0.0336,
+          "estimated_cpu_energy_j": 0.9772
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 2.08,
+          "cpu_fraction": 0.0327,
+          "estimated_cpu_energy_j": 0.9507
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.877,
+          "cpu_fraction": 0.0295,
+          "estimated_cpu_energy_j": 0.8577
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.655,
+          "cpu_fraction": 0.026,
+          "estimated_cpu_energy_j": 0.7564
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.59,
+          "cpu_fraction": 0.025,
+          "estimated_cpu_energy_j": 0.7267
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.571,
+          "cpu_fraction": 0.0247,
+          "estimated_cpu_energy_j": 0.7181
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.515,
+          "cpu_fraction": 0.0238,
+          "estimated_cpu_energy_j": 0.6926
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.456,
+          "cpu_fraction": 0.0229,
+          "estimated_cpu_energy_j": 0.6652
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.434,
+          "cpu_fraction": 0.0225,
+          "estimated_cpu_energy_j": 0.6553
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.93,
+      "total_cpu_energy_j": 29.3966,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 185.1,
+        "power.rails.cpu.little": 128.7,
+        "power.rails.cpu.mid": 176.7
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 11.175,
+          "cpu_fraction": 0.1825,
+          "estimated_cpu_energy_j": 5.3661
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.191,
+          "cpu_fraction": 0.0848,
+          "estimated_cpu_energy_j": 2.4928
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.358,
+          "cpu_fraction": 0.0712,
+          "estimated_cpu_energy_j": 2.0926
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.159,
+          "cpu_fraction": 0.0679,
+          "estimated_cpu_energy_j": 1.9973
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 3.962,
+          "cpu_fraction": 0.0647,
+          "estimated_cpu_energy_j": 1.9027
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 3.946,
+          "cpu_fraction": 0.0645,
+          "estimated_cpu_energy_j": 1.8949
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.517,
+          "cpu_fraction": 0.0575,
+          "estimated_cpu_energy_j": 1.6889
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.141,
+          "cpu_fraction": 0.0513,
+          "estimated_cpu_energy_j": 1.5083
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.458,
+          "cpu_fraction": 0.0402,
+          "estimated_cpu_energy_j": 1.1805
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.376,
+          "cpu_fraction": 0.0388,
+          "estimated_cpu_energy_j": 1.1408
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.319,
+          "cpu_fraction": 0.0379,
+          "estimated_cpu_energy_j": 1.1137
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.052,
+          "cpu_fraction": 0.0335,
+          "estimated_cpu_energy_j": 0.9856
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 1.976,
+          "cpu_fraction": 0.0323,
+          "estimated_cpu_energy_j": 0.949
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.616,
+          "cpu_fraction": 0.0264,
+          "estimated_cpu_energy_j": 0.7761
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.577,
+          "cpu_fraction": 0.0258,
+          "estimated_cpu_energy_j": 0.7572
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.556,
+          "cpu_fraction": 0.0254,
+          "estimated_cpu_energy_j": 0.7474
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.525,
+          "cpu_fraction": 0.0249,
+          "estimated_cpu_energy_j": 0.7324
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.523,
+          "cpu_fraction": 0.0249,
+          "estimated_cpu_energy_j": 0.7314
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.443,
+          "cpu_fraction": 0.0236,
+          "estimated_cpu_energy_j": 0.6931
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.345,
+          "cpu_fraction": 0.022,
+          "estimated_cpu_energy_j": 0.6458
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 30.6417,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 196.7,
+        "power.rails.cpu.little": 131.0,
+        "power.rails.cpu.mid": 183.6
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 10.673,
+          "cpu_fraction": 0.1825,
+          "estimated_cpu_energy_j": 5.5933
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 4.749,
+          "cpu_fraction": 0.0812,
+          "estimated_cpu_energy_j": 2.489
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.465,
+          "cpu_fraction": 0.0764,
+          "estimated_cpu_energy_j": 2.34
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.348,
+          "cpu_fraction": 0.0744,
+          "estimated_cpu_energy_j": 2.2787
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.023,
+          "cpu_fraction": 0.0688,
+          "estimated_cpu_energy_j": 2.1085
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 3.519,
+          "cpu_fraction": 0.0602,
+          "estimated_cpu_energy_j": 1.8441
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.211,
+          "cpu_fraction": 0.0549,
+          "estimated_cpu_energy_j": 1.6831
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 2.851,
+          "cpu_fraction": 0.0488,
+          "estimated_cpu_energy_j": 1.4942
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.192,
+          "cpu_fraction": 0.0375,
+          "estimated_cpu_energy_j": 1.1487
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.174,
+          "cpu_fraction": 0.0372,
+          "estimated_cpu_energy_j": 1.1394
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.133,
+          "cpu_fraction": 0.0365,
+          "estimated_cpu_energy_j": 1.1178
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 1.888,
+          "cpu_fraction": 0.0323,
+          "estimated_cpu_energy_j": 0.9897
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.738,
+          "cpu_fraction": 0.0297,
+          "estimated_cpu_energy_j": 0.9111
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 1.725,
+          "cpu_fraction": 0.0295,
+          "estimated_cpu_energy_j": 0.9042
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.712,
+          "cpu_fraction": 0.0293,
+          "estimated_cpu_energy_j": 0.8973
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.467,
+          "cpu_fraction": 0.0251,
+          "estimated_cpu_energy_j": 0.7689
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.42,
+          "cpu_fraction": 0.0243,
+          "estimated_cpu_energy_j": 0.7441
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.401,
+          "cpu_fraction": 0.024,
+          "estimated_cpu_energy_j": 0.7344
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.394,
+          "cpu_fraction": 0.0238,
+          "estimated_cpu_energy_j": 0.7304
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.383,
+          "cpu_fraction": 0.0237,
+          "estimated_cpu_energy_j": 0.7248
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 25.466,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 161.3,
+        "power.rails.cpu.little": 114.0,
+        "power.rails.cpu.mid": 149.5
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 9.235,
+          "cpu_fraction": 0.1788,
+          "estimated_cpu_energy_j": 4.5538
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 4.305,
+          "cpu_fraction": 0.0834,
+          "estimated_cpu_energy_j": 2.1227
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.044,
+          "cpu_fraction": 0.0783,
+          "estimated_cpu_energy_j": 1.994
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 3.572,
+          "cpu_fraction": 0.0692,
+          "estimated_cpu_energy_j": 1.7612
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 3.496,
+          "cpu_fraction": 0.0677,
+          "estimated_cpu_energy_j": 1.7238
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 3.185,
+          "cpu_fraction": 0.0617,
+          "estimated_cpu_energy_j": 1.5704
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 2.867,
+          "cpu_fraction": 0.0555,
+          "estimated_cpu_energy_j": 1.4136
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 2.635,
+          "cpu_fraction": 0.051,
+          "estimated_cpu_energy_j": 1.2994
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.012,
+          "cpu_fraction": 0.039,
+          "estimated_cpu_energy_j": 0.992
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 1.993,
+          "cpu_fraction": 0.0386,
+          "estimated_cpu_energy_j": 0.9829
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 1.977,
+          "cpu_fraction": 0.0383,
+          "estimated_cpu_energy_j": 0.9751
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 1.668,
+          "cpu_fraction": 0.0323,
+          "estimated_cpu_energy_j": 0.8225
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 1.624,
+          "cpu_fraction": 0.0314,
+          "estimated_cpu_energy_j": 0.8008
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.43,
+          "cpu_fraction": 0.0277,
+          "estimated_cpu_energy_j": 0.7052
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.373,
+          "cpu_fraction": 0.0266,
+          "estimated_cpu_energy_j": 0.6771
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.327,
+          "cpu_fraction": 0.0257,
+          "estimated_cpu_energy_j": 0.6542
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.284,
+          "cpu_fraction": 0.0249,
+          "estimated_cpu_energy_j": 0.6329
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.242,
+          "cpu_fraction": 0.024,
+          "estimated_cpu_energy_j": 0.6123
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.195,
+          "cpu_fraction": 0.0231,
+          "estimated_cpu_energy_j": 0.589
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.182,
+          "cpu_fraction": 0.0229,
+          "estimated_cpu_energy_j": 0.5829
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 31.3019,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 219.0,
+        "power.rails.cpu.little": 130.2,
+        "power.rails.cpu.mid": 172.9
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 11.727,
+          "cpu_fraction": 0.1811,
+          "estimated_cpu_energy_j": 5.6698
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.477,
+          "cpu_fraction": 0.0846,
+          "estimated_cpu_energy_j": 2.6478
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.437,
+          "cpu_fraction": 0.0685,
+          "estimated_cpu_energy_j": 2.1452
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.412,
+          "cpu_fraction": 0.0681,
+          "estimated_cpu_energy_j": 2.1332
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.323,
+          "cpu_fraction": 0.0668,
+          "estimated_cpu_energy_j": 2.0898
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 4.218,
+          "cpu_fraction": 0.0651,
+          "estimated_cpu_energy_j": 2.039
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.656,
+          "cpu_fraction": 0.0565,
+          "estimated_cpu_energy_j": 1.7676
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.381,
+          "cpu_fraction": 0.0522,
+          "estimated_cpu_energy_j": 1.6346
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.594,
+          "cpu_fraction": 0.0401,
+          "estimated_cpu_energy_j": 1.2539
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.517,
+          "cpu_fraction": 0.0389,
+          "estimated_cpu_energy_j": 1.2171
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.413,
+          "cpu_fraction": 0.0373,
+          "estimated_cpu_energy_j": 1.1666
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.127,
+          "cpu_fraction": 0.0329,
+          "estimated_cpu_energy_j": 1.0285
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 2.127,
+          "cpu_fraction": 0.0329,
+          "estimated_cpu_energy_j": 1.0284
+        },
+        {
+          "process": "binder:519_6",
+          "cpu_sec": 1.943,
+          "cpu_fraction": 0.03,
+          "estimated_cpu_energy_j": 0.9393
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.676,
+          "cpu_fraction": 0.0259,
+          "estimated_cpu_energy_j": 0.8101
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.633,
+          "cpu_fraction": 0.0252,
+          "estimated_cpu_energy_j": 0.7895
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.612,
+          "cpu_fraction": 0.0249,
+          "estimated_cpu_energy_j": 0.7793
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.536,
+          "cpu_fraction": 0.0237,
+          "estimated_cpu_energy_j": 0.7425
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.472,
+          "cpu_fraction": 0.0227,
+          "estimated_cpu_energy_j": 0.7117
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.464,
+          "cpu_fraction": 0.0226,
+          "estimated_cpu_energy_j": 0.708
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 29.0292,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 194.4,
+        "power.rails.cpu.little": 128.4,
+        "power.rails.cpu.mid": 161.5
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 11.735,
+          "cpu_fraction": 0.1826,
+          "estimated_cpu_energy_j": 5.3012
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.664,
+          "cpu_fraction": 0.0881,
+          "estimated_cpu_energy_j": 2.5586
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.451,
+          "cpu_fraction": 0.0693,
+          "estimated_cpu_energy_j": 2.0107
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.371,
+          "cpu_fraction": 0.068,
+          "estimated_cpu_energy_j": 1.9745
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 4.334,
+          "cpu_fraction": 0.0674,
+          "estimated_cpu_energy_j": 1.9579
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 3.907,
+          "cpu_fraction": 0.0608,
+          "estimated_cpu_energy_j": 1.765
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.709,
+          "cpu_fraction": 0.0577,
+          "estimated_cpu_energy_j": 1.6755
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.384,
+          "cpu_fraction": 0.0527,
+          "estimated_cpu_energy_j": 1.5287
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.714,
+          "cpu_fraction": 0.0422,
+          "estimated_cpu_energy_j": 1.2258
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.545,
+          "cpu_fraction": 0.0396,
+          "estimated_cpu_energy_j": 1.1495
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.325,
+          "cpu_fraction": 0.0362,
+          "estimated_cpu_energy_j": 1.0504
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.206,
+          "cpu_fraction": 0.0343,
+          "estimated_cpu_energy_j": 0.9963
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 2.148,
+          "cpu_fraction": 0.0334,
+          "estimated_cpu_energy_j": 0.9703
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.737,
+          "cpu_fraction": 0.027,
+          "estimated_cpu_energy_j": 0.7845
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.688,
+          "cpu_fraction": 0.0263,
+          "estimated_cpu_energy_j": 0.7625
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.61,
+          "cpu_fraction": 0.0251,
+          "estimated_cpu_energy_j": 0.7273
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.582,
+          "cpu_fraction": 0.0246,
+          "estimated_cpu_energy_j": 0.7146
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.485,
+          "cpu_fraction": 0.0231,
+          "estimated_cpu_energy_j": 0.6709
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.392,
+          "cpu_fraction": 0.0217,
+          "estimated_cpu_energy_j": 0.6286
+        },
+        {
+          "process": "decon0_kthread",
+          "cpu_sec": 1.276,
+          "cpu_fraction": 0.0199,
+          "estimated_cpu_energy_j": 0.5766
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 29.5542,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 200.2,
+        "power.rails.cpu.little": 124.9,
+        "power.rails.cpu.mid": 168.0
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 10.973,
+          "cpu_fraction": 0.1806,
+          "estimated_cpu_energy_j": 5.3385
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.151,
+          "cpu_fraction": 0.0848,
+          "estimated_cpu_energy_j": 2.506
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.22,
+          "cpu_fraction": 0.0695,
+          "estimated_cpu_energy_j": 2.0532
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.197,
+          "cpu_fraction": 0.0691,
+          "estimated_cpu_energy_j": 2.0419
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.031,
+          "cpu_fraction": 0.0664,
+          "estimated_cpu_energy_j": 1.9611
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 3.915,
+          "cpu_fraction": 0.0644,
+          "estimated_cpu_energy_j": 1.9047
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.401,
+          "cpu_fraction": 0.056,
+          "estimated_cpu_energy_j": 1.6546
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.216,
+          "cpu_fraction": 0.0529,
+          "estimated_cpu_energy_j": 1.5646
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.418,
+          "cpu_fraction": 0.0398,
+          "estimated_cpu_energy_j": 1.1762
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.349,
+          "cpu_fraction": 0.0387,
+          "estimated_cpu_energy_j": 1.1428
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.257,
+          "cpu_fraction": 0.0371,
+          "estimated_cpu_energy_j": 1.0979
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 1.999,
+          "cpu_fraction": 0.0329,
+          "estimated_cpu_energy_j": 0.9727
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 1.979,
+          "cpu_fraction": 0.0326,
+          "estimated_cpu_energy_j": 0.9628
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.707,
+          "cpu_fraction": 0.0281,
+          "estimated_cpu_energy_j": 0.8304
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.558,
+          "cpu_fraction": 0.0256,
+          "estimated_cpu_energy_j": 0.758
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.556,
+          "cpu_fraction": 0.0256,
+          "estimated_cpu_energy_j": 0.757
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.527,
+          "cpu_fraction": 0.0251,
+          "estimated_cpu_energy_j": 0.7429
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.523,
+          "cpu_fraction": 0.0251,
+          "estimated_cpu_energy_j": 0.7409
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.439,
+          "cpu_fraction": 0.0237,
+          "estimated_cpu_energy_j": 0.7003
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.331,
+          "cpu_fraction": 0.0219,
+          "estimated_cpu_energy_j": 0.6476
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 30.9384,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 212.0,
+        "power.rails.cpu.little": 128.1,
+        "power.rails.cpu.mid": 176.0
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 11.909,
+          "cpu_fraction": 0.1809,
+          "estimated_cpu_energy_j": 5.5965
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.649,
+          "cpu_fraction": 0.0858,
+          "estimated_cpu_energy_j": 2.6547
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.638,
+          "cpu_fraction": 0.0704,
+          "estimated_cpu_energy_j": 2.1795
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.413,
+          "cpu_fraction": 0.067,
+          "estimated_cpu_energy_j": 2.0739
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.29,
+          "cpu_fraction": 0.0652,
+          "estimated_cpu_energy_j": 2.0159
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 4.287,
+          "cpu_fraction": 0.0651,
+          "estimated_cpu_energy_j": 2.0148
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.717,
+          "cpu_fraction": 0.0565,
+          "estimated_cpu_energy_j": 1.747
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.439,
+          "cpu_fraction": 0.0522,
+          "estimated_cpu_energy_j": 1.6164
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.673,
+          "cpu_fraction": 0.0406,
+          "estimated_cpu_energy_j": 1.256
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.556,
+          "cpu_fraction": 0.0388,
+          "estimated_cpu_energy_j": 1.2011
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.302,
+          "cpu_fraction": 0.035,
+          "estimated_cpu_energy_j": 1.0818
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 2.227,
+          "cpu_fraction": 0.0338,
+          "estimated_cpu_energy_j": 1.0466
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.152,
+          "cpu_fraction": 0.0327,
+          "estimated_cpu_energy_j": 1.0114
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.827,
+          "cpu_fraction": 0.0277,
+          "estimated_cpu_energy_j": 0.8585
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.751,
+          "cpu_fraction": 0.0266,
+          "estimated_cpu_energy_j": 0.8231
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.729,
+          "cpu_fraction": 0.0263,
+          "estimated_cpu_energy_j": 0.8128
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.662,
+          "cpu_fraction": 0.0252,
+          "estimated_cpu_energy_j": 0.7809
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.619,
+          "cpu_fraction": 0.0246,
+          "estimated_cpu_energy_j": 0.7611
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.558,
+          "cpu_fraction": 0.0237,
+          "estimated_cpu_energy_j": 0.732
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.435,
+          "cpu_fraction": 0.0218,
+          "estimated_cpu_energy_j": 0.6744
+        }
+      ]
+    },
+    {
+      "trace_duration_s": 59.94,
+      "total_cpu_energy_j": 31.9188,
+      "cpu_rail_power_mw": {
+        "power.rails.cpu.big": 228.5,
+        "power.rails.cpu.little": 129.1,
+        "power.rails.cpu.mid": 174.9
+      },
+      "per_process": [
+        {
+          "process": "CrRendererMain",
+          "cpu_sec": 11.516,
+          "cpu_fraction": 0.1829,
+          "estimated_cpu_energy_j": 5.8376
+        },
+        {
+          "process": "binder:2875_6",
+          "cpu_sec": 5.319,
+          "cpu_fraction": 0.0845,
+          "estimated_cpu_energy_j": 2.6963
+        },
+        {
+          "process": "surfaceflinger",
+          "cpu_sec": 4.334,
+          "cpu_fraction": 0.0688,
+          "estimated_cpu_energy_j": 2.197
+        },
+        {
+          "process": "ThreadPoolForeg",
+          "cpu_sec": 4.279,
+          "cpu_fraction": 0.068,
+          "estimated_cpu_energy_j": 2.1692
+        },
+        {
+          "process": "android.hardwar",
+          "cpu_sec": 4.279,
+          "cpu_fraction": 0.068,
+          "estimated_cpu_energy_j": 2.169
+        },
+        {
+          "process": "InputDispatcher",
+          "cpu_sec": 4.03,
+          "cpu_fraction": 0.064,
+          "estimated_cpu_energy_j": 2.0427
+        },
+        {
+          "process": "VizCompositorTh",
+          "cpu_sec": 3.506,
+          "cpu_fraction": 0.0557,
+          "estimated_cpu_energy_j": 1.7773
+        },
+        {
+          "process": "Compositor",
+          "cpu_sec": 3.273,
+          "cpu_fraction": 0.052,
+          "estimated_cpu_energy_j": 1.6592
+        },
+        {
+          "process": "InputReader",
+          "cpu_sec": 2.539,
+          "cpu_fraction": 0.0403,
+          "estimated_cpu_energy_j": 1.2872
+        },
+        {
+          "process": "irq/522-synapti",
+          "cpu_sec": 2.409,
+          "cpu_fraction": 0.0383,
+          "estimated_cpu_energy_j": 1.2214
+        },
+        {
+          "process": "sugov:4",
+          "cpu_sec": 2.31,
+          "cpu_fraction": 0.0367,
+          "estimated_cpu_energy_j": 1.1708
+        },
+        {
+          "process": "CompositorGpuTh",
+          "cpu_sec": 2.071,
+          "cpu_fraction": 0.0329,
+          "estimated_cpu_energy_j": 1.05
+        },
+        {
+          "process": "s.nexuslauncher",
+          "cpu_sec": 2.006,
+          "cpu_fraction": 0.0319,
+          "estimated_cpu_energy_j": 1.0168
+        },
+        {
+          "process": "binder:519_5",
+          "cpu_sec": 1.92,
+          "cpu_fraction": 0.0305,
+          "estimated_cpu_energy_j": 0.9734
+        },
+        {
+          "process": "InputProcessor",
+          "cpu_sec": 1.608,
+          "cpu_fraction": 0.0255,
+          "estimated_cpu_energy_j": 0.8152
+        },
+        {
+          "process": "mali-gpuq-kthre",
+          "cpu_sec": 1.57,
+          "cpu_fraction": 0.0249,
+          "estimated_cpu_energy_j": 0.7957
+        },
+        {
+          "process": "android.ui",
+          "cpu_sec": 1.567,
+          "cpu_fraction": 0.0249,
+          "estimated_cpu_energy_j": 0.7941
+        },
+        {
+          "process": "NetworkService",
+          "cpu_sec": 1.493,
+          "cpu_fraction": 0.0237,
+          "estimated_cpu_energy_j": 0.7568
+        },
+        {
+          "process": "ndroid.systemui",
+          "cpu_sec": 1.484,
+          "cpu_fraction": 0.0236,
+          "estimated_cpu_energy_j": 0.7522
+        },
+        {
+          "process": "binder:519_3",
+          "cpu_sec": 1.454,
+          "cpu_fraction": 0.0231,
+          "estimated_cpu_energy_j": 0.7369
+        }
+      ]
+    }
+  ],
+  "hotspot_functions": {
+    "total_samples": 47672,
+    "resolved_samples": 328,
+    "resolution_rate_pct": 0.7,
+    "top_functions": [
+      {
+        "function": "_raw_spin_unlock_irqrestore",
+        "samples": 18
+      },
+      {
+        "function": "finish_task_switch",
+        "samples": 12
+      },
+      {
+        "function": "nterp_helper",
+        "samples": 6
+      },
+      {
+        "function": "_ZN3art35InvokeVirtualOrInterfaceWithVarArgsIP10_jmethodIDEENS_6JValueERKNS_33ScopedObjectAccessAlreadyRunnableEP8_jobjectT_St9__va_list",
+        "samples": 6
+      },
+      {
+        "function": "_ZN7android6Looper8pollOnceEiPiS1_PPv",
+        "samples": 5
+      },
+      {
+        "function": "_raw_spin_unlock_irq",
+        "samples": 4
+      },
+      {
+        "function": "__fget_files",
+        "samples": 4
+      },
+      {
+        "function": "_ZN5scudo11HybridMutex7tryLockEv",
+        "samples": 4
+      },
+      {
+        "function": "_ZN3art2gc9collector11MarkCompact16ProcessMarkStackEv",
+        "samples": 4
+      },
+      {
+        "function": "ExecuteNterpImpl",
+        "samples": 4
+      },
+      {
+        "function": "load_balance",
+        "samples": 3
+      },
+      {
+        "function": "_raw_spin_lock_bh",
+        "samples": 3
+      },
+      {
+        "function": "__list_del_entry_valid",
+        "samples": 3
+      },
+      {
+        "function": "_ZN7android12_GLOBAL__N_121initializeMotionEventERNS_11MotionEventERKNS_12InputMessageE.__uniq.201453111753888604293897252930610712111",
+        "samples": 3
+      },
+      {
+        "function": "[DEDUPED]",
+        "samples": 3
+      }
+    ]
+  },
+  "data_richness": {
+    "youtube_energy_mean_mb": 5.98,
+    "chrome_method_mean_mb": 48.17,
+    "chrome_energy_mean_mb": 7.84,
+    "legacy_mean_mb": 14.51,
+    "emulator_validation": {
+      "legacy": "real",
+      "energy": "dummy",
+      "memory": "flat",
+      "both": "dummy",
+      "method": "real"
+    },
+    "waydroid_validation": {
+      "legacy": 0.0,
+      "energy": 0.5,
+      "memory": 1.0,
+      "both": 0.5,
+      "method": 0.5
+    }
+  },
+  "waydroid_results": {
+    "legacy": {
+      "trace_size_mb": 0.001,
+      "power_rail_tracks": 0,
+      "sched_slices": 0,
+      "perf_samples": 0,
+      "mem_counters": 0,
+      "score": 0.0
+    },
+    "energy": {
+      "trace_size_mb": 1.0,
+      "power_rail_tracks": 0,
+      "sched_slices": 17078,
+      "perf_samples": 0,
+      "mem_counters": 0,
+      "score": 0.5
+    },
+    "memory": {
+      "trace_size_mb": 0.014,
+      "power_rail_tracks": 0,
+      "sched_slices": 0,
+      "perf_samples": 0,
+      "mem_counters": 605,
+      "score": 1.0
+    },
+    "both": {
+      "trace_size_mb": 0.017,
+      "power_rail_tracks": 0,
+      "sched_slices": 0,
+      "perf_samples": 0,
+      "mem_counters": 605,
+      "score": 0.5
+    },
+    "method": {
+      "trace_size_mb": 67.075,
+      "power_rail_tracks": 0,
+      "sched_slices": 15226,
+      "perf_samples": 0,
+      "mem_counters": 0,
+      "score": 0.5
+    }
+  },
+  "ranking_stability": {
+    "youtube": {
+      "top_k": 3,
+      "n_runs": 15,
+      "processes_in_top_k_every_run": [
+        "ExoPlayer:Playb",
+        "surfaceflinger"
+      ],
+      "stability_rate": 0.67
+    },
+    "chrome": {
+      "top_k": 3,
+      "n_runs": 15,
+      "processes_in_top_k_every_run": [
+        "CrRendererMain"
+      ],
+      "stability_rate": 0.33
+    }
+  },
+  "cold_start_test": {
+    "run0_total_cpu_j": 27.2879,
+    "warm_mean_j": 11.5345,
+    "warm_std_j": 0.7038,
+    "warm_95ci": [
+      11.1659,
+      11.9032
+    ],
+    "t_stat": -83.755,
+    "p_value": 0.0,
+    "run0_is_outlier": 1
+  },
+  "rail_ci_95": {
+    "CPU Big": {
+      "mean_mw": 31.9,
+      "std_mw": 31.0,
+      "ci95_lo_mw": 16.2,
+      "ci95_hi_mw": 47.6,
+      "n": 15
+    },
+    "CPU Little": {
+      "mean_mw": 111.9,
+      "std_mw": 16.9,
+      "ci95_lo_mw": 103.4,
+      "ci95_hi_mw": 120.5,
+      "n": 15
+    },
+    "CPU Mid": {
+      "mean_mw": 66.1,
+      "std_mw": 21.3,
+      "ci95_lo_mw": 55.4,
+      "ci95_hi_mw": 76.9,
+      "n": 15
+    },
+    "Display": {
+      "mean_mw": 299.7,
+      "std_mw": 27.8,
+      "ci95_lo_mw": 285.6,
+      "ci95_hi_mw": 313.7,
+      "n": 15
+    },
+    "GPU": {
+      "mean_mw": 10.0,
+      "std_mw": 1.5,
+      "ci95_lo_mw": 9.2,
+      "ci95_hi_mw": 10.8,
+      "n": 15
+    },
+    "Modem": {
+      "mean_mw": 28.0,
+      "std_mw": 4.7,
+      "ci95_lo_mw": 25.6,
+      "ci95_hi_mw": 30.4,
+      "n": 15
+    },
+    "Memory": {
+      "mean_mw": 38.4,
+      "std_mw": 6.9,
+      "ci95_lo_mw": 34.9,
+      "ci95_hi_mw": 41.9,
+      "n": 15
+    }
+  },
+  "llm_analysis": "[GITHUB_TOKEN not set \u2014 set it to enable LLM analysis]"
+}

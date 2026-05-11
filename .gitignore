@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+results/perfetto/
+results/logs/
+results/batterystats/
+results/results/
+src/.DS_Store
+src/manafa_resume_*.json
